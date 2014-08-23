@@ -1,0 +1,33 @@
+.row
+  .col-lg-12
+    %h1.page-header
+      = t('bus')
+.row
+  .col-lg-12
+    %a.btn.btn-primary{:href => new_admin_bus_path} New
+    %table.table.table-striped
+      %thead
+        %tr
+          %th.col-md-1
+          %th.col-md-1
+          %th.col-md-7{:class=> 'text-center'}
+            = t('helper.name')
+          %th.col-md-7{:class=> 'text-center'}
+            = t('helper.kind')
+          %th.col-md-3{:class=> 'text-center'}
+            = t('helper.depart')
+      - @buses.each do |bus|
+        %tr
+          %td
+            %a{:href => edit_admin_bus_path(bus)}
+              edit
+              %span.glyphicon.glyphicon-pencil
+          %td
+            %a{:href => bus, data: {method: 'delete', confirm: t('helper.are_you_sure')}}
+              %span.glyphicon.glyphicon-remove
+          %td{:class=> 'text-center'}
+            = bus.name
+          %td{:class=> 'text-center'}
+            = kind_enum(bus.kind)
+          %td{:class=> 'text-center'}
+            = l bus.depart, format: :yymmdd

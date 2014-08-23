@@ -1,0 +1,15 @@
+= form_for([:admin, @bus]) do |f|
+  %p
+    = f.text_field :name, class: 'form-control', placeholder: t('helper.name')
+  %p
+    = f.select(:kind, options_for_select(kind_option_for_select), {}, {:class=>'form-control'})
+  %p
+    = f.time_field :depart, class: 'form-control', placeholder: t('helper.depart')
+  %p
+    = f.check_box :special, class: 'form-control'
+    = f.label :special, t('helper.special')
+  .row
+    .col-md-12.pull-right
+      .pull-right
+        = link_to 'Back', admin_buses_path, class: 'btn btn-default'
+        = f.submit class: 'btn btn-success'

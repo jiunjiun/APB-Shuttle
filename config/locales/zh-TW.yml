@@ -1,0 +1,17 @@
+zh-TW:
+  helper:
+    add    : '新增'
+    name   : '名稱'
+    note   : '備註'
+    special: '加開'
+    depart : '發車時間'
+
+  note_enum:
+    master  : '局本部'
+    security: '保安隊'
+    safety  : '安檢隊'
+
+  time:
+    formats:
+      yymmdd: '%Y年%m月%d日'
+      yymmdd_s: '%Y/%m/%d'
