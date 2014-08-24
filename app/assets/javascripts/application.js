@@ -18,3 +18,5 @@
 
 //= require link/bootstrap.min
 //= require link/main
+
+//= require index

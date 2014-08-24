@@ -11,10 +11,38 @@
  * file per style scope.
  *
  *= require main
+ *= require animate
  */
 
 @import "bootstrap"
 @import "font-awesome"
 
-#headerwrap
+html, body
+  height: 100%
+
+.rp-hero
+  height: 100%
+  width: 100%
+  min-height: 100%
   background-color: #18BC9C
+  text-align: center
+
+  &:before
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    height: 100%
+
+  .hero-inner
+    margin-top: -10%
+    display: inline-block
+    vertical-align: middle
+    color: #fff
+
+  i.fa
+    font-size: 7em
+
+  h1
+    cursor: pointer
+    font-size: 7em
+

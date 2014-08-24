@@ -48,3 +48,5 @@ gem 'puma'
 gem "font-awesome-rails"
 gem 'bootstrap-sass'
 gem 'haml'
+
+gem "animate-rails"

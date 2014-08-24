@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <title>LINK - Agency Theme</title>
+    <title>APB-Bus</title>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
@@ -28,19 +28,15 @@
   <body>
 
   <!-- Menu -->
-  <%= render partial: "common/nav" %>
+
 
   <!-- MAIN IMAGE SECTION -->
-  <div id="headerwrap">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <%= yield %>
-          <!-- <div class="spacer"></div>
-          <i class="fa fa-angle-down"></i> -->
-        </div>
-      </div><!-- row -->
-    </div><!-- /container -->
-  </div><!-- /headerwrap -->
+  <header class="rp-hero">
+    <div class="hero-inner">
+      <hgroup>
+        <%= yield %>
+      </hgroup>
+    </div>
+  </header>
   </body>
 </html>
