@@ -20,17 +20,27 @@
 //= require nprogress
 //= require nprogress-turbolinks
 
+
 NProgress.configure
   showSpinner: false
   ease: "ease"
   speed: 500
 
-initialize = () ->
+switchAnim = (x) ->
+  $("#info").removeClass().addClass(x + " animated").one "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", ->
+    $(this).removeClass()
+    return
 
+initialize = () ->
   $("#menuToggle, .menu-close").on "click", ->
     $("#menuToggle").toggleClass "active"
     $("body").toggleClass "body-push-toleft"
     $("#theMenu").toggleClass "menu-open"
+    return
+
+  $("#info").click (e) ->
+    e.preventDefault()
+    switchAnim 'bounceIn'
     return
 
 $(document).ready(initialize)
