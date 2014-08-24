@@ -34,9 +34,16 @@
   <header class="rp-hero">
     <div class="hero-inner">
       <hgroup>
+        <header class="logo">
+          <a href="<%= root_path %>">
+            <i class="fa fa-plane"></i>
+          </a>
+        </header>
         <%= yield %>
+        <%= render partial: "common/paginate" %>
       </hgroup>
     </div>
   </header>
+  <%= yield :js %>
   </body>
 </html>

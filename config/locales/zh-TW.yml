@@ -1,10 +1,12 @@
 zh-TW:
   helper:
-    add    : '新增'
-    name   : '名稱'
-    note   : '備註'
-    special: '加開'
-    depart : '發車時間'
+    add     : '新增'
+    name    : '名稱'
+    note    : '備註'
+    special : '加開'
+    depart  : '發車時間'
+    previous: '上一班'
+    next    : '下一班'
 
   note_enum:
     master  : '局本部'

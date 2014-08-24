@@ -1,0 +1,18 @@
+.paginate
+  %ul.list-inline
+    - if !params[:next].nil?
+      %li
+        %h3
+          - if params[:next].to_i - 1 == 0
+            %a{:href => root_path}= t('helper.previous')
+          - else
+            %a{:href => next_path(params[:next].to_i - 1)}= t('helper.previous')
+      %li
+        &emsp;&emsp;
+    %li
+      %h3
+        - if params[:next].nil?
+          %a{:href => next_path(1)}= t('helper.next')
+        - else
+          %a{:href => next_path(params[:next].to_i + 1)}= t('helper.next')
+

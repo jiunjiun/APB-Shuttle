@@ -50,3 +50,8 @@ gem 'bootstrap-sass'
 gem 'haml'
 
 gem "animate-rails"
+
+gem 'nprogress-rails'
+
+
+
