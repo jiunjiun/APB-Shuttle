@@ -43,5 +43,16 @@ initialize = () ->
     switchAnim 'bounceIn'
     return
 
+  $("body").swipe
+    swipe: (event, direction, distance, duration, fingerCount, fingerData) ->
+      console.log direction
+      switch direction
+        when 'left'
+          $('.previous a')[0].click()
+        when 'right'
+          $('.next a')[0].click()
+      return
+    threshold: 0
+
 $(document).ready(initialize)
 $(document).on('page:load', initialize)
