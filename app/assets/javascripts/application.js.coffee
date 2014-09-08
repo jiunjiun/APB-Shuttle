@@ -48,9 +48,9 @@ initialize = () ->
       console.log direction
       switch direction
         when 'left'
-          $('.previous a')[0].click()
-        when 'right'
           $('.next a')[0].click()
+        when 'right'
+          $('.previous a')[0].click()
       return
     threshold: 0
 
