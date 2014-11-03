@@ -1,9 +1,11 @@
 class IndexController < ApplicationController
   def index
-    @bus = Bus.latest_depart.first
+    @bus = Bus.recent_depart
+    session[:depart] ||= @bus.depart
   end
 
   def next
-    @bus = Bus.latest_depart.offset(params[:next]).first
+    @bus = Bus.departs_number(session[:now_num] + params[:next].to_i)
+    redirect_to root_url if @bus.blank?
   end
 end

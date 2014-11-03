@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    resources :buses
-  end
+  # namespace :admin do
+  #   resources :buses
+  # end
   get 'next/:next', to: 'index#next',  as: 'next', constraints: {:next => /\d*/}
   get "next/*next" => redirect("/")
+
+  # get 'test', to: "index#test"
 
   root 'index#index'
 
