@@ -6,8 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :init_seesion
   protected
     def init_seesion
-
-      reset_session if session[:depart] <= 1.minutes.ago if request.fullpath == root_path
+      reset_session if session[:depart] <= 1.minutes.ago && request.fullpath == root_path if session[:depart]
       session[:now_num]   ||= BusCache.where({bus_id: Bus.recent_depart.id}).first.id.to_i
     end
 end

@@ -45,7 +45,6 @@ initialize = () ->
 
   $("body").swipe
     swipe: (event, direction, distance, duration, fingerCount, fingerData) ->
-      console.log direction
       switch direction
         when 'left'
           $('.next a')[0].click()
