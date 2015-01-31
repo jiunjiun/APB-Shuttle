@@ -1,0 +1,12 @@
+defaults: &defaults
+  google:
+    analytics_key: ""
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
