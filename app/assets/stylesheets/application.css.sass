@@ -18,14 +18,20 @@
 @import "font-awesome"
 
 // nprogress
-$nprogress-color: #ff3ec2
+// $nprogress-color: #ff3ec2
 @import "nprogress"
 @import "nprogress-bootstrap"
+
+$footer_height: 50px
 
 html, body
   height: 100%
 
-.rp-hero
+#wrapper
+  height: 100%
+  min-height: 100%
+
+header
   height: 100%
   width: 100%
   min-height: 100%
@@ -38,7 +44,7 @@ html, body
     vertical-align: middle
     height: 100%
 
-  .hero-inner
+  .inner
     // margin-top: -10%
     display: inline-block
     vertical-align: middle
@@ -62,6 +68,19 @@ html, body
       color: #fff
       text-decoration: none
 
+
+#footer
+  position: relative
+  height: $footer_height
+  margin-top: -$footer_height
+
+  color: #a5d8c7
+  a
+    color: #fff
+    border-bottom: dotted 1px #a5d8c7
+    &:hover
+      text-decoration: none
+      border-bottom: solid 1px #fff
 
 
 

@@ -22,6 +22,6 @@ module ApbBus
 
     config.time_zone = "Taipei"
 
-    config.i18n.default_locale = "zh-TW"
+    config.i18n.default_locale = "tw"
   end
 end

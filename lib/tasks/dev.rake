@@ -59,6 +59,10 @@ namespace :dev do
     Bus.new({name: '航警局', kind: 3, special: false, note: '中型警備車', depart: '23:40'}).save
     Bus.new({name: '航警局', kind: 3, special: false, note: '中型警備車', depart: '00:10'}).save
 
+    #亞通
+    # Bus.new({name: '亞通客運', kind: 4, special: false, note: 'T2 -> T1', depart: '04:45'}).save
+    # Bus.new({name: '亞通客運', kind: 4, special: false, note: 'T1 -> APB', depart: '04:45'}).save
+
     Bus.reset_cache
   end
 end

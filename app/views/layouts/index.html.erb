@@ -30,21 +30,23 @@
 
   <!-- Menu -->
 
-
-  <!-- MAIN IMAGE SECTION -->
-  <header class="rp-hero">
-    <div class="hero-inner">
-      <hgroup>
-        <header class="logo">
-          <a href="<%= root_path %>">
-            <i class="fa fa-plane"></i>
-          </a>
-        </header>
-        <%= yield %>
-        <%= render partial: "common/paginate" %>
-      </hgroup>
-    </div>
-  </header>
+  <div id="wrapper">
+    <!-- MAIN IMAGE SECTION -->
+    <header>
+      <div class="inner">
+        <hgroup>
+          <header class="logo">
+            <a href="<%= root_path %>">
+              <i class="fa fa-plane"></i>
+            </a>
+          </header>
+          <%= yield %>
+          <%= render partial: "common/paginate" %>
+        </hgroup>
+      </div>
+    </header>
+    <%= render partial: 'common/footer' %>
+  </div>
   <%= yield :js %>
   </body>
 </html>

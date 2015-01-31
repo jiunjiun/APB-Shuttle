@@ -1,5 +1,5 @@
-zh-TW:
-  helper:
+tw:
+  helpers:
     add     : '新增'
     name    : '名稱'
     note    : '備註'
@@ -7,6 +7,8 @@ zh-TW:
     depart  : '發車時間'
     previous: '上一班'
     next    : '下一班'
+
+  footers:
 
   note_enum:
     master  : '局本部'
