@@ -3,7 +3,7 @@ class CreateBuses < ActiveRecord::Migration
     create_table :buses do |t|
       t.string    :name
       t.integer   :kind
-      t.boolean   :special
+      t.boolean   :special, default: false
       t.string    :note
       t.datetime  :depart
 

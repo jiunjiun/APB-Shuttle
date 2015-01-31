@@ -24,19 +24,11 @@ ActiveRecord::Schema.define(version: 20150131060319) do
   create_table "buses", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.integer  "kind",       limit: 4
-    t.boolean  "special",    limit: 1
+    t.boolean  "special",    limit: 1,   default: false
     t.string   "note",       limit: 255
     t.datetime "depart"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "oranges", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "depart"
-    t.string   "note",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
