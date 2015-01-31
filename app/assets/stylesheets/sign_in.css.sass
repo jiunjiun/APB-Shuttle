@@ -1,0 +1,41 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require PixelAdmin/bootstrap.min
+ *= require PixelAdmin/pixel-admin.min
+ *= require PixelAdmin/pages.min
+ *= require PixelAdmin/rtl.min
+ *= require PixelAdmin/themes.min
+ */
+
+@import "font-awesome"
+
+.page-signin .signin-container
+  margin: 0 auto
+  margin-top: 200px
+  .slogan
+    padding-top: 15px
+
+.page-signin .form-group.w-icon input[type=email]
+  font-size: 15px
+  padding-left: 56px
+
+.theme-asphalt #main-navbar .navbar-brand div, .theme-asphalt
+  .demo-logo
+    color: #4CAF50
+    background-color: #fff
+
+
+.page-signin-alt .signin-header .logo
+  text-decoration: none
+  font-size: 30px
+  color: #4CAF50
