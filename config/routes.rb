@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {:registrations => 'users/registrations'}
+  devise_for :users, :controllers => {:registrations => 'users/registrations',  sessions: 'users/sessions'}
 
   get 'next/:next', to: 'index#next',  as: 'next', constraints: {:next => /\d*/}
   get "next/*next" => redirect("/")
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :buses
+    resources :oranges
     root 'index#index'
   end
 

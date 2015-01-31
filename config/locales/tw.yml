@@ -16,6 +16,7 @@ tw:
     kind         : '隊別'
     note         : '備註'
     special      : '加開'
+    direction    : '方向'
     depart       : '發車時間'
     previous     : '上一班'
     next         : '下一班'
@@ -29,11 +30,20 @@ tw:
     forms:
       name: '航警局'
 
+  oranges:
+    name: '亞通車表'
+
+    forms:
+      name: '亞通客運'
+
   note_enum:
-    master  : '局本部'
-    security: '保安隊'
-    safety  : '安檢隊'
-    orange  : '亞通客運'
+    master   : '局本部'
+    security : '保安隊'
+    safety   : '安檢隊'
+    orange   : '亞通客運'
+    t2_2_t1  : 'T2 to T1'
+    t1_2_apb : 'T1 to 航警局'
+
 
   time:
     formats:

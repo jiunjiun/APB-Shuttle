@@ -1,0 +1,36 @@
+%ul.breadcrumb.breadcrumb-page
+  .breadcrumb-label.text-light-gray= t('helpers.you_are_here')
+  %li
+    %a{:href => admin_root_path}= t('backend')
+  %li.active
+    = t('oranges.name')
+.page-header
+  .text-lg
+    = t('oranges.name')
+.row
+  .col-lg-12
+    %a.btn.btn-primary.btn-flat{:href => new_admin_orange_path}= t('helpers.add')
+    %table.table.table-striped
+      %thead
+        %tr
+          %th.col-md-1
+          %th.col-md-1
+          %th.col-md-3{:class=> 'text-center'}
+            = t('helpers.depart')
+          %th.col-md-8{:class=> 'text-center'}
+            = t('helpers.kind')
+      - @buses.each do |bus|
+        %tr
+          %td
+            = link_to edit_admin_orange_path(bus), class: 'btn btn-xs btn-flat' do
+              = t('helpers.edit')
+          %td
+            = link_to admin_orange_path(bus), method: :delete, data: {confirm: t('helpers.are_you_sure')}, class: 'btn btn-xs btn-flat' do
+              = t('helpers.delete')
+          %td{:class=> 'text-center'}
+            = l bus.depart, format: :hhmm
+          %td{:class=> 'text-center'}
+            = kind_enum(bus.kind)
+            - if bus.special
+              %i.fa.fa-plus.plus-car{data: {toggle: "tooltip", placement: "top", "original-title"=> t('helpers.special')}}
+

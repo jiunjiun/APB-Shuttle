@@ -1,0 +1,23 @@
+= form_for(@bus, url: h_oranges_url(@bus)) do |f|
+  .panel
+    .panel-body
+      = f.hidden_field :name, value: t('buses.forms.name')
+      .form-group{class: ('has-error' if @bus.errors.include? :note)}
+        = f.label :note, t('helpers.direction')
+        = f.select(:note, options_for_select(note_option_for_select), {}, {:class=>'form-control'})
+        - if @bus.errors.include? :note
+          %p.help-block
+            - @bus.errors[:note].each do |message|
+              = message
+      .form-group{class: ('has-error' if @bus.errors.include? :depart)}
+        = f.label :depart, t('helpers.depart')
+        = f.time_field :depart, class: 'form-control', placeholder: t('helpers.depart')
+        - if @bus.errors.include? :depart
+          %p.help-block
+            - @bus.errors[:depart].each do |message|
+              = message
+  .panel
+    .panel-body
+      .pull-right
+        = link_to t('helpers.back'), admin_buses_path, class: 'btn btn-default btn-flat'
+        = f.submit class: 'btn btn-success btn-flat'

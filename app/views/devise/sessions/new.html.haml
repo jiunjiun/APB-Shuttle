@@ -1,0 +1,19 @@
+.signin-header
+  %a.logo{:href => root_path}
+    .demo-logo
+      %i.fa.fa-plane
+    APB
+  / / .logo
+
+%h1.form-header Sign in to your Account
+
+= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'panel', novalidate: "novalidate"}) do |f|
+  .form-group
+    = f.email_field :email, class: 'form-control input-lg', autofocus: true, placeholder: "Email"
+  / / Username
+  .form-group.signin-password
+    = f.password_field :password, class: 'form-control input-lg', autocomplete: "off", placeholder: "Password"
+  / / Password
+  .form-actions
+    = f.submit "Sign In", class: "btn btn-primary btn-block btn-lg btn-flat"
+  / / .form-actions
