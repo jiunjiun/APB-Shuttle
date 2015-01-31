@@ -2,7 +2,7 @@ class Bus < ActiveRecord::Base
   has_one :bus_cache
   accepts_nested_attributes_for :bus_cache
 
-  enum category: [ :master, :safety, :security ]
+  enum category: [ :master, :safety, :security, :orange ]
 
   default_scope { order(:depart) }
 

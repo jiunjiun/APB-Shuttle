@@ -7,6 +7,8 @@ module IndexHelper
       t('note_enum.safety')
     when 3
       t('note_enum.security')
+    when 4
+      t('note_enum.orange')
     end
   end
 end
