@@ -1,0 +1,100 @@
+#main-navbar.navbar.navbar-inverse{:role => "navigation"}
+  / Main menu toggle
+  %button#main-menu-toggle{:type => "button"}
+    %i.navbar-icon.fa.fa-bars.icon
+    %span.hide-menu-text HIDE MENU
+  .navbar-inner
+    / Main navbar header
+    .navbar-header
+      / Logo
+      %a.navbar-brand{:href => admin_root_path}
+        = t('backend')
+      / Main navbar toggle
+      %button.navbar-toggle.collapsed{"data-target" => "#main-navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+        %i.navbar-icon.fa.fa-bars
+    / / .navbar-header
+    #main-navbar-collapse.collapse.navbar-collapse.main-navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          = link_to t('backend'), admin_root_path
+      .right.clearfix
+        %ul.nav.navbar-nav.pull-right.right-navbar-nav
+          -# %li.nav-icon-btn.nav-icon-btn-success.dropdown
+          -#   %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#messages"}
+          -#     %i.nav-icon.fa.fa-tint
+          -#     %span.small-screen-text Income messages
+          -#   .dropdown-menu.widget-messages-alt.no-padding#demo-settings{:style => "width: 300px;"}
+          -#     %h5.header THEMES
+          -#     #demo-themes
+          -#       .demo-themes-row
+          -#         %a.demo-theme{"data-theme" => "default", :href => "#"}
+          -#           .theme-preview
+          -#             = image_tag "PixelAdmin/themes/default.png"
+          -#           .overlay
+          -#           %span Default
+          -#         %a.demo-theme{"data-theme" => "asphalt", :href => "#"}
+          -#           .theme-preview
+          -#             = image_tag "PixelAdmin/themes/asphalt.png"
+          -#           .overlay
+          -#           %span Asphalt
+          -#       .demo-themes-row
+          -#         %a.demo-theme.active{"data-theme" => "purple-hills", :href => "#"}
+          -#           .theme-preview
+          -#             = image_tag "PixelAdmin/themes/purple-hills.png"
+          -#           .overlay
+          -#           %span Purple Hills
+          -#         %a.demo-theme{"data-theme" => "adminflare", :href => "#"}
+          -#           .theme-preview
+          -#             = image_tag "PixelAdmin/themes/adminflare.png"
+          -#           .overlay
+          -#           %span Adminflare
+          -#       .demo-themes-row
+          -#         %a.demo-theme{"data-theme" => "dust", :href => "#"}
+          -#           .theme-preview
+          -#             = image_tag "PixelAdmin/themes/dust.png"
+          -#           .overlay
+          -#           %span Dust
+          -#         %a.demo-theme{"data-theme" => "frost", :href => "#"}
+          -#           .theme-preview
+          -#             = image_tag "PixelAdmin/themes/frost.png"
+          -#           .overlay
+          -#           %span Frost
+          -#       .demo-themes-row
+          -#         %a.demo-theme{"data-theme" => "fresh", :href => "#"}
+          -#           .theme-preview
+          -#             = image_tag "PixelAdmin/themes/fresh.png"
+          -#           .overlay
+          -#           %span Fresh
+          -#         %a.demo-theme{"data-theme" => "silver", :href => "#"}
+          -#           .theme-preview
+          -#             = image_tag "PixelAdmin/themes/silver.png"
+          -#           .overlay
+          -#           %span Silver
+          -#       .demo-themes-row
+          -#         %a.demo-theme{"data-theme" => "clean", :href => "#"}
+          -#           .theme-preview
+          -#             = image_tag "PixelAdmin/themes/clean.png"
+          -#           .overlay
+          -#           %span Clean
+          -#         %a.demo-theme{"data-theme" => "white", :href => "#"}
+          -#           .theme-preview
+          -#             = image_tag "PixelAdmin/themes/white.png"
+          -#           .overlay
+          -#           %span White
+          -#   / / .dropdown-menu
+          %li
+            = link_to t('back_fontend'), root_path
+          %li.dropdown
+            %a.dropdown-toggle.user-menu{"data-toggle" => "dropdown", :href => "#"}
+              %span= current_user.username
+              %i.fa.fa-caret-down
+            %ul.dropdown-menu
+              %li
+                = link_to edit_user_registration_path do
+                  %i.fa.fa-user.fa.fa-cog.fa-fw
+                  = t('password_change')
+              %li.divider
+              %li
+                = link_to destroy_user_session_path, method: :delete do
+                  %i.fa.fa-power-off.fa-fw
+                  = t('sign_out')

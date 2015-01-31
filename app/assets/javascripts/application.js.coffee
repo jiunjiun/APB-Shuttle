@@ -14,9 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 
-//= require link/modernizr.custom
-//= require link/bootstrap.min
-
 //= require nprogress
 //= require nprogress-turbolinks
 

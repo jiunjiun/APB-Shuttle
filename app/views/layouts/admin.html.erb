@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie9 gt-ie8"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="gt-ie8 gt-ie9 not-ie" lang="zh-TW"> <!--<![endif]-->
+<head>
+  <title>APB Bus - Backend</title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="jiunjiun">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'admin', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <script src="assets/javascripts/ie.min.js"></script>
+  <![endif]-->
+
+  <%= analytics_init if Rails.env.production? %>
+</head>
+
+<body class="theme-asphalt main-menu-animated" cz-shortcut-listen="true">
+
+  <div id="main-wrapper">
+    <%= render partial: "admin/common/header" %>
+    <%= render partial: "admin/common/nav" %>
+
+    <div id="content-wrapper">
+        <%= yield %>
+    </div>
+  </div>
+
+  <div id="main-menu-bg"></div>
+
+</body>
+
+</html>

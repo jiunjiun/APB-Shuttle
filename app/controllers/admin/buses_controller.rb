@@ -1,4 +1,4 @@
-class Admin::BusesController < ApplicationController
+class Admin::BusesController < AdminController
   before_action :set_bus, only: [:edit, :update, :destroy]
 
   def index
