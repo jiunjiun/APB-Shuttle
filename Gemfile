@@ -44,7 +44,7 @@ gem 'mina-puma', :require => false
 
 gem 'puma'
 
-# -----
+# style
 gem "font-awesome-rails"
 gem 'bootstrap-sass'
 gem 'haml'
@@ -53,5 +53,12 @@ gem "animate-rails"
 
 gem 'nprogress-rails'
 
+# user access
+gem 'devise'
 
+#google analytics
+gem 'google-analytics-rails'
+
+# config yml
+gem 'settingslogic'
 
