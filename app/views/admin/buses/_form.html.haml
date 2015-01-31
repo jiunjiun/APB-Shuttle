@@ -1,15 +1,7 @@
-
 = form_for([:admin, @bus]) do |f|
   .panel
     .panel-body
-      .form-group{class: ('has-error' if @bus.errors.include? :name)}
-        = f.label :name, t('helpers.name')
-        = f.text_field :name, class: 'form-control', placeholder: t('helpers.name'), value: t('buses.forms.name')
-        - if @bus.errors.include? :name
-          %p.help-block
-            - @bus.errors[:name].each do |message|
-              = message
-
+      = f.hidden_field :name, value: t('buses.forms.name')
       .form-group{class: ('has-error' if @bus.errors.include? :kind)}
         = f.label :kind, t('helpers.kind')
         = f.select(:kind, options_for_select(kind_option_for_select), {}, {:class=>'form-control'})
@@ -25,8 +17,6 @@
             - @bus.errors[:depart].each do |message|
               = message
       .form-group{class: ('has-error' if @bus.errors.include? :special)}
-
-
         = f.label :special, class: 'checkbox-inline' do
           = f.check_box :special, class: 'px'
           %span.lbl= t('helpers.special')
@@ -34,7 +24,6 @@
           %p.help-block
             - @bus.errors[:special].each do |message|
               = message
-
   .panel
     .panel-body
       .pull-right

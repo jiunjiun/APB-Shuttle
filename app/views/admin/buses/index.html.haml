@@ -17,11 +17,8 @@
           %th.col-md-1
           %th.col-md-3{:class=> 'text-center'}
             = t('helpers.depart')
-          %th.col-md-4{:class=> 'text-center'}
-            = t('helpers.name')
-          %th.col-md-4{:class=> 'text-center'}
+          %th.col-md-8{:class=> 'text-center'}
             = t('helpers.kind')
-
       - @buses.each do |bus|
         %tr
           %td
@@ -33,7 +30,7 @@
           %td{:class=> 'text-center'}
             = l bus.depart, format: :hhmm
           %td{:class=> 'text-center'}
-            = bus.name
-          %td{:class=> 'text-center'}
             = kind_enum(bus.kind)
+            - if bus.special
+              %i.fa.fa-plus.plus-car{data: {toggle: "tooltip", placement: "top", "original-title"=> t('helpers.special')}}
 

@@ -40,6 +40,6 @@ class Admin::BusesController < AdminController
     end
 
     def bus_params
-      params.require(:bus).permit(:name, :kind, :note, :depart)
+      params.require(:bus).permit(:name, :kind, :note, :depart, :special)
     end
 end

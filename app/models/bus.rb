@@ -23,6 +23,11 @@ class Bus < ActiveRecord::Base
     end
   end
 
+  def save_with_orange
+    self.kind = 4
+    save
+  end
+
   before_save :add_depart
   private
     def add_depart
