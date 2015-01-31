@@ -1,0 +1,13 @@
+# encoding: utf-8
+namespace :user do
+  desc "Rebuild system"
+  task :build => [:setup]
+
+  desc "Setup system data"
+  task :setup => :environment do
+      puts "Create system user"
+      u = User.new({username: '', email: '',
+                    password: '', password_confirmation: ''})
+      u.save!
+  end
+end

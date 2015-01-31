@@ -11,24 +11,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102054520) do
+ActiveRecord::Schema.define(version: 20150131060319) do
 
-  create_table "bus_caches", force: true do |t|
-    t.integer  "bus_id"
+  create_table "bus_caches", force: :cascade do |t|
+    t.integer  "bus_id",     limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "bus_caches", ["bus_id"], name: "index_bus_caches_on_bus_id", using: :btree
 
-  create_table "buses", force: true do |t|
-    t.string   "name"
-    t.integer  "kind"
-    t.boolean  "special"
-    t.string   "note"
+  create_table "buses", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.integer  "kind",       limit: 4
+    t.boolean  "special",    limit: 1
+    t.string   "note",       limit: 255
     t.datetime "depart"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "oranges", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "depart"
+    t.string   "note",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username",               limit: 255, default: "", null: false
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "confirmation_token",     limit: 255
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email",      limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

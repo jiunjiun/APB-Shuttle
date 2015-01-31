@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => {:registrations => 'users/registrations'}
 
-  # namespace :admin do
-  #   resources :buses
-  # end
   get 'next/:next', to: 'index#next',  as: 'next', constraints: {:next => /\d*/}
   get "next/*next" => redirect("/")
 
   # get 'test', to: "index#test"
 
   root 'index#index'
+
+  namespace :admin do
+    resources :buses
+    root 'index#index'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
