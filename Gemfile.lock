@@ -39,10 +39,12 @@ GEM
     animate-rails (1.0.7)
       rails
     arel (6.0.0)
+    awesome_print (1.6.1)
     bcrypt (3.1.9)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.2)
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -67,6 +69,10 @@ GEM
     haml (4.0.5)
       tilt
     hike (1.2.3)
+    hirb (0.7.3)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     i18n (0.7.0)
     jbuilder (2.1.3)
       activesupport (>= 3.0.0, < 5)
@@ -79,6 +85,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.4.3)
     mina (0.3.0)
       open4
@@ -95,6 +102,15 @@ GEM
     nprogress-rails (0.1.6.2)
     open4 (1.3.4)
     orm_adapter (0.5.0)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
+    pry-remote (0.1.8)
+      pry (~> 0.9)
+      slop (~> 3.0)
     puma (2.9.1)
       rack (>= 1.1, < 2.0)
     rack (1.6.0)
@@ -139,6 +155,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     settingslogic (2.0.9)
+    slop (3.6.0)
     spring (1.1.3)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -159,6 +176,7 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicode-display_width (0.1.1)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -167,18 +185,24 @@ PLATFORMS
 
 DEPENDENCIES
   animate-rails
+  awesome_print
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   devise
   font-awesome-rails
   google-analytics-rails
   haml
+  hirb
+  hirb-unicode
   jbuilder (~> 2.0)
   jquery-rails
   mina
   mina-puma
   mysql2
   nprogress-rails
+  pry
+  pry-rails
+  pry-remote
   puma
   rails (= 4.2.0)
   sass-rails (~> 4.0.3)
