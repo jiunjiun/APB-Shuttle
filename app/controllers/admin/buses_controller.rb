@@ -2,7 +2,7 @@ class Admin::BusesController < AdminController
   before_action :set_bus, only: [:edit, :update, :destroy]
 
   def index
-    @buses = Bus.all
+    @buses = Bus.where("kind != ?", 4).all
   end
 
   def new

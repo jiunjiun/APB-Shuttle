@@ -1,15 +1,42 @@
+
 = form_for([:admin, @bus]) do |f|
-  %p
-    = f.text_field :name, class: 'form-control', placeholder: t('helper.name')
-  %p
-    = f.select(:kind, options_for_select(kind_option_for_select), {}, {:class=>'form-control'})
-  %p
-    = f.time_field :depart, class: 'form-control', placeholder: t('helper.depart')
-  %p
-    = f.check_box :special, class: 'form-control'
-    = f.label :special, t('helper.special')
-  .row
-    .col-md-12.pull-right
+  .panel
+    .panel-body
+      .form-group{class: ('has-error' if @bus.errors.include? :name)}
+        = f.label :name, t('helpers.name')
+        = f.text_field :name, class: 'form-control', placeholder: t('helpers.name'), value: t('buses.forms.name')
+        - if @bus.errors.include? :name
+          %p.help-block
+            - @bus.errors[:name].each do |message|
+              = message
+
+      .form-group{class: ('has-error' if @bus.errors.include? :kind)}
+        = f.label :kind, t('helpers.kind')
+        = f.select(:kind, options_for_select(kind_option_for_select), {}, {:class=>'form-control'})
+        - if @bus.errors.include? :kind
+          %p.help-block
+            - @bus.errors[:kind].each do |message|
+              = message
+      .form-group{class: ('has-error' if @bus.errors.include? :depart)}
+        = f.label :depart, t('helpers.depart')
+        = f.time_field :depart, class: 'form-control', placeholder: t('helpers.depart')
+        - if @bus.errors.include? :depart
+          %p.help-block
+            - @bus.errors[:depart].each do |message|
+              = message
+      .form-group{class: ('has-error' if @bus.errors.include? :special)}
+
+
+        = f.label :special, class: 'checkbox-inline' do
+          = f.check_box :special, class: 'px'
+          %span.lbl= t('helpers.special')
+        - if @bus.errors.include? :special
+          %p.help-block
+            - @bus.errors[:special].each do |message|
+              = message
+
+  .panel
+    .panel-body
       .pull-right
-        = link_to 'Back', admin_buses_path, class: 'btn btn-default'
-        = f.submit class: 'btn btn-success'
+        = link_to t('helpers.back'), admin_buses_path, class: 'btn btn-default btn-flat'
+        = f.submit class: 'btn btn-success btn-flat'

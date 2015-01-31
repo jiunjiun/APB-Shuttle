@@ -1,14 +1,33 @@
 tw:
-  helpers:
-    add     : '新增'
-    name    : '名稱'
-    note    : '備註'
-    special : '加開'
-    depart  : '發車時間'
-    previous: '上一班'
-    next    : '下一班'
+  backend:      '後台'
+  back_fontend: '回前台'
 
-  footers:
+  helpers:
+    you_are_here : '目前在:'
+    are_you_sure : '確定刪除嗎?'
+    list         : '清單'
+    add          : '新增'
+    edit         : '修改'
+    update       : '更新'
+    delete       : '刪除'
+    back         : '返回'
+
+    name         : '名稱'
+    kind         : '隊別'
+    note         : '備註'
+    special      : '加開'
+    depart       : '發車時間'
+    previous     : '上一班'
+    next         : '下一班'
+
+    submit:
+      create: "新增"
+      update: "更新"
+
+  buses:
+    name: '航警車表'
+    forms:
+      name: '航警局'
 
   note_enum:
     master  : '局本部'
@@ -20,3 +39,4 @@ tw:
     formats:
       yymmdd: '%Y年%m月%d日'
       yymmdd_s: '%Y/%m/%d'
+      hhmm: '%H:%M'
