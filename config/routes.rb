@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'next/:next', to: 'index#next',  as: 'next', constraints: {:next => /\d*/}
   get "next/*next" => redirect("/")
 
-  # get 'test', to: "index#test"
+  get 'apb',    to: "page#apb"
+  get 'orange', to: "page#orange"
+  get 'about',  to: "page#about"
 
   root 'index#index'
 
