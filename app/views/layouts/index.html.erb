@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8]>         <html class="ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie9 gt-ie8"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="gt-ie8 gt-ie9 not-ieß" lang="zh-TW"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,31 +23,41 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="assets/javascripts/ie.min.js"></script>
     <![endif]-->
+
+    <%= analytics_init if Rails.env.production? %>
   </head>
 
   <body>
 
   <!-- Menu -->
-
+  <%= render partial: "common/nav" %>
   <div id="wrapper">
-    <!-- MAIN IMAGE SECTION -->
-    <header>
-      <div class="inner">
-        <hgroup>
-          <header class="logo">
-            <a href="<%= root_path %>">
-              <i class="fa fa-plane"></i>
-            </a>
-          </header>
-          <%= yield %>
-          <%= render partial: "common/paginate" %>
-        </hgroup>
+    <div id="sb-site">
+      <div id="menu">
+        <!-- <div class="sb-toggle-right">
+          <i class="fa fa-bars fa-2x"></i>
+        </div> -->
       </div>
-    </header>
-    <%= render partial: 'common/footer' %>
+      <!-- MAIN IMAGE SECTION -->
+      <article>
+        <div class="inner">
+          <hgroup>
+            <header class="logo">
+              <a href="<%= root_path %>">
+                <i class="fa fa-bus"></i>
+              </a>
+            </header>
+            <%= yield %>
+            <%= render partial: "common/paginate" %>
+          </hgroup>
+        </div>
+      </article>
+      <%= render partial: 'common/footer' %>
+    </div>
   </div>
   <%= yield :js %>
   </body>
