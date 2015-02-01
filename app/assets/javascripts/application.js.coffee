@@ -46,7 +46,7 @@ initialize = () ->
         when 'left'
           $('.next a')[0].click()
         when 'right'
-          $('.previous a')[0].click()
+          $('.previous a')[0].click() if $('.previous a').length > 0
       return
     threshold: 0
 
