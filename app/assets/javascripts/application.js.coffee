@@ -17,6 +17,8 @@
 //= require nprogress
 //= require nprogress-turbolinks
 
+//= require Slidebars/slidebars.min
+
 
 NProgress.configure
   showSpinner: false
@@ -50,5 +52,9 @@ initialize = () ->
       return
     threshold: 0
 
-$(document).ready(initialize)
+  $('.sb-toggle-right').click ->
+    mySlidebars = new $.slidebars()
+    mySlidebars.slidebars.open('right')
+
 $(document).on('page:load', initialize)
+$(document).ready(initialize)

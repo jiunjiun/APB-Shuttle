@@ -1,12 +1,13 @@
-%nav#theMenu.menu
-  .menu-wrap
-    %h1.logo
-      %a{:href => root_path} APB Bus
-    %i.fa.fa-arrow-right.menu-close
-    %a{:href => "services.html"} 車表
-    -# %a{:href => "portfolio.html"} Portfolio
-    -# %a{:href => "about.html"} 111
-    -# %a{:href => } About
-  / Menu button
-  #menuToggle
-    %i.fa.fa-bars
+.sb-slidebar.sb-right.sb-style-overlay
+  %header.text-center
+    .logo
+      = link_to root_path do
+        %i.fa.fa-bus
+
+  %nav.text-center
+    %ul.list-unstyled
+      %li
+        = link_to t('buses.name'), apb_path
+      %li
+        = link_to t('oranges.name'), orange_path
+      -# %li 關於
