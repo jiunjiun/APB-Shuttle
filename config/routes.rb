@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'orange', to: "page#orange"
   get 'about',  to: "page#about"
 
+  # get 'api',    to: "api#index"
+
   root 'index#index'
 
   namespace :admin do

@@ -1,6 +1,7 @@
 tw:
   backend:      '後台'
   back_fontend: '回前台'
+  back_home:    '回首頁'
 
   helpers:
     you_are_here : '目前在:'
@@ -20,6 +21,9 @@ tw:
     depart       : '發車時間'
     previous     : '上一班'
     next         : '下一班'
+    last_update  : "更新時間: %{updated}"
+    ref          : '資料來源: 亞通巴士 - 桃園機場巡迴巴士'
+
 
     submit:
       create: "新增"

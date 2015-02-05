@@ -1,13 +1,17 @@
 .sb-slidebar.sb-right.sb-style-overlay
   %header.text-center
     .logo
-      = link_to root_path do
+      = link_to root_path, class: 'no-decoration' do
         %i.fa.fa-bus
 
   %nav.text-center
     %ul.list-unstyled
       %li
-        = link_to t('buses.name'), apb_path
+        = link_to t('buses.name'), apb_path, class: 'no-decoration'
       %li
-        = link_to t('oranges.name'), orange_path
+        = link_to t('oranges.name'), orange_path, class: 'no-decoration'
       -# %li 關於
+      - if params[:controller] != 'index'
+        %li
+          %h4
+            = link_to t('back_home'), orange_path, class: 'no-decoration'

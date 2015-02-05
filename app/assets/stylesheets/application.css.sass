@@ -22,18 +22,25 @@
 @import "nprogress"
 @import "nprogress-bootstrap"
 
-@import "Slidebars/slidebars.min"
+@import "Slidebars/slidebars"
 
 
-html, body
+body
   height: 100%
+  background-color: #18BC9C
+
+html#index
+  position: relative
+  min-height: 100%
+  height: 100%
+
 
 #wrapper, #sb-site
   height: 100%
   min-height: 100%
 
 #sb-site
-  background-color: #18BC9C
+  background-color: transparent
 
 #wrapper
   position: relative
@@ -42,6 +49,8 @@ html, body
   position: absolute
   right: 0
   color: #fff
+  z-index: 2
+  cursor: pointer
 
   .sb-toggle-right
     padding: 20px
@@ -99,7 +108,6 @@ html, body
 
 #footer
   position: relative
-  // height: 40px
   margin-top: -40px
 
   color: #a5d8c7
@@ -132,10 +140,40 @@ html, body
       font-size: 1.7em
       padding: 10px 0
 
-      a
-        color: #fff
-        &:hover
-          text-decoration: none
+a.no-decoration
+  color: #fff
+  &:hover
+    text-decoration: none
 
+html#app
+  position: relative
+  min-height: 100%
+  height: auto
 
+  body
+    position: static
+    margin-bottom: 60px
+    #wrapper
+      height: auto
+    #sb-site
+      height: auto
+
+    #footer
+      position: absolute
+      bottom: 0
+      width: 100%
+      height: 60px
+
+      padding: 15px
+      z-index: 10
+
+  .ref
+    padding: 10px
+    color: #fff
+    a
+      color: #fff
+      border-bottom: dotted 1px #a5d8c7
+      &:hover
+        text-decoration: none
+        border-bottom: solid 1px #fff
 

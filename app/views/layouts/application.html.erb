@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="ie8"> <![endif]-->
 <!--[if IE 9]>         <html class="ie9 gt-ie8"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="gt-ie8 gt-ie9 not-ieß" lang="zh-TW"> <!--<![endif]-->
+<!--[if gt IE 9]><!--> <html class="gt-ie8 gt-ie9 not-ieß" lang="zh-TW" id="app"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,24 +34,19 @@
   <body>
   <!-- Menu -->
   <%= render partial: "common/nav" %>
-  <div id="wrapper">
-    <div id="sb-site">
-      <div id="menu">
-        <div class="sb-toggle-right">
-          <i class="fa fa-bars fa-2x"></i>
-        </div>
-      </div>
-      <div id="container" class="container-fluid">
-        <div class="row text-center">
-          <div class="col-xs-10 col-xs-offset-1 col-lg-8 col-lg-offset-2">
-            <%= yield %>
-          </div>
-        </div>
-      </div>
-
-      <%= render partial: 'common/footer' %>
+  <div id="menu">
+    <div class="sb-toggle-right">
+      <i class="fa fa-bars fa-2x"></i>
     </div>
   </div>
+  <div id="wrapper">
+    <div id="sb-site">
+      <div id="container" class="container-fluid">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  <%= render partial: 'common/footer' %>
   <%= yield :js %>
   </body>
 </html>

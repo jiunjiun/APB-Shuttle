@@ -42,7 +42,7 @@ initialize = () ->
     switchAnim 'bounceIn'
     return
 
-  $("body").swipe
+  $("html#index #wrapper").swipe
     swipe: (event, direction, distance, duration, fingerCount, fingerData) ->
       switch direction
         when 'left'

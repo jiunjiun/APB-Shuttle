@@ -1,0 +1,13 @@
+.row.text-center
+  .col-md-12
+    %h1.title
+      = t('oranges.name')
+
+    = link_to 'http://www.orangebus.com.tw/data/editor_upload/images/AIRPORT-20150205.JPG' do
+      = image_tag 'http://www.orangebus.com.tw/data/editor_upload/images/AIRPORT-20150205.JPG', width: '60%', class: 'img-thumbnail'
+
+  .col-md-12
+    .ref
+      = link_to 'http://www.orangebus.com.tw/info.php?catId=6' do
+        = t('helpers.ref')
+
