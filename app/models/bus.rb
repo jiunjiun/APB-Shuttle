@@ -13,7 +13,12 @@ class Bus < ActiveRecord::Base
   end
 
   def self.recent_depart
-    where("depart > ?", Time.current.change(year: 2014, month: 6, day:1)).first
+    rd = where("depart > ?", Time.current.change(year: 2014, month: 6, day:1)).first
+    if rd.nil?
+      first_bus
+    else
+      rd
+    end
   end
 
   def self.reset_cache
@@ -21,6 +26,10 @@ class Bus < ActiveRecord::Base
     Bus.all.each do |bus|
       BusCache.new({bus: bus}).save
     end
+  end
+
+  def self.first_bus
+    where("depart > ?", Time.new(2014, 6, 1)).first
   end
 
   def save_with_orange
