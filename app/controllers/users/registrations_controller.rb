@@ -6,19 +6,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   layout 'admin'
 
   def new
-    if user_signed_in?
-      super
-    else
-      redirect_to new_user_session_path
-    end
+    super
   end
 
   def create
-    if user_signed_in?
-      super
-    else
-      redirect_to new_user_session_path
-    end
+    super
   end
 
   def edit
@@ -39,5 +31,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     def after_sign_up_path_for(resource)
       admin_users_path
+    end
+
+    def sign_up(resource_name, resource)
+      true
     end
 end

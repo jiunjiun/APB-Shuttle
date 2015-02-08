@@ -1,0 +1,28 @@
+%ul.breadcrumb.breadcrumb-page
+  .breadcrumb-label.text-light-gray= t('helpers.you_are_here')
+  %li
+    %a{:href => admin_root_path}= t('backend')
+  %li
+    = t('user_management')
+.page-header
+  .text-lg
+    = t('user_management')
+.row
+  .col-lg-12
+    %a.btn.btn-primary.btn-flat{:href => new_user_registration_path}= t('helpers.add')
+    %table.table.table-striped
+      %thead
+        %tr
+          %th.col-md-1
+          %th.col-md-5{:class=> 'text-center'}
+            = t('helper.name')
+          %th.col-md-3{:class=> 'text-center'}
+            = t('helper.email')
+      - @users.each do |user|
+        %tr
+          %td
+            %a{:href => admin_user_path(user), data: {method: 'delete', confirm: t('helpers.are_you_sure')}}
+              %i.fa.fa-times
+
+          %td.text-center= user.username
+          %td.text-center= user.email

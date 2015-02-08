@@ -3,6 +3,8 @@ tw:
   back_fontend: '回前台'
   back_home:    '回首頁'
 
+  user_management: '帳號管理'
+
   helpers:
     you_are_here : '目前在:'
     are_you_sure : '確定刪除嗎?'
@@ -48,6 +50,20 @@ tw:
     t2_2_t1  : 'T2 to T1'
     t1_2_apb : 'T1 to 航警局'
 
+  users:
+    username: '名字'
+    email   : 'Email'
+    password: '密碼'
+    password_confirmation: '密碼確認'
+
+  devise:
+    registration:
+      sign_up: '註冊'
+      edit:
+        current_password     : '舊密碼'
+        new_password         : '新密碼'
+        password_confirmation: '密碼確認'
+        update               : '密碼更新'
 
   time:
     formats:

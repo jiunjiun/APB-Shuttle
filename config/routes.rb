@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :buses
     resources :oranges
+    resources :users
     root 'index#index'
   end
 

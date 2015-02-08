@@ -1,0 +1,50 @@
+%ul.breadcrumb.breadcrumb-page
+  .breadcrumb-label.text-light-gray= t('helpers.you_are_here')
+  %li
+    %a{:href => admin_root_path}= t('backend')
+  %li
+    %a{:href => admin_users_path}= t('user_management')
+  %li.active
+    = t('devise.registration.sign_up')
+.page-header
+  %h1
+    %span
+      = t('devise.registration.sign_up')
+.row
+  .col-lg-12
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      -# = devise_error_messages!
+      .form-group{class: ('has-error' if resource.errors.include? :username)}
+        = f.label :username, t('users.username')
+        = f.text_field :username, class: 'form-control', placeholder: t('users.username')
+        - if resource.errors.include? :username
+          %p.help-block
+            - resource.errors[:username].each do |message|
+              = message
+      .form-group{class: ('has-error' if resource.errors.include? :email)}
+        = f.label :email, t('users.email')
+        = f.email_field :email, class: 'form-control', placeholder: t('users.email')
+        - if resource.errors.include? :email
+          %p.help-block
+            - resource.errors[:email].each do |message|
+              = message
+      .form-group{class: ('has-error' if resource.errors.include? :password)}
+        = f.label :password, t('users.password')
+        = f.password_field :password, class: 'form-control', placeholder: t('users.password')
+        - if resource.errors.include? :password
+          %p.help-block
+            - resource.errors[:password].each do |message|
+              = message
+      .form-group{class: ('has-error' if resource.errors.include? :password_confirmation)}
+        = f.label :password_confirmation, t('users.password_confirmation')
+        = f.password_field :password_confirmation, class: 'form-control', placeholder: t('users.password_confirmation')
+        - if resource.errors.include? :password_confirmation
+          %p.help-block
+            - resource.errors[:password_confirmation].each do |message|
+              = message
+
+      .row
+        .col-md-6.pull-right
+          .pull-right
+            = link_to t('helpers.back'), admin_users_path, class: 'btn btn-default btn-flat'
+            = f.submit class: 'btn btn-success btn-flat'
