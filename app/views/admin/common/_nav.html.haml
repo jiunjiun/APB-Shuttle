@@ -13,3 +13,14 @@
         = link_to admin_users_path do
           %i.menu-icon.fa.fa-users
           %span.mm-text= t('user_management')
+      %li.mm-dropdown.mm-dropdown-root
+        %a{:href => "#"}
+          %i.menu-icon.fa.fa-cog
+          %span.mm-text.mmc-dropdown-delay.animated.fadeIn= t('settings.name')
+        %ul.mmc-dropdown-delay.animated.fadeInLeft
+          %li
+            %a{:href => admin_settings_buses_path, :tabindex => "-1"}
+              %span.mm-text= t('settings.buses')
+          %li
+            %a{:href => admin_settings_oranges_path, :tabindex => "-1"}
+              %span.mm-text= t('settings.orange')

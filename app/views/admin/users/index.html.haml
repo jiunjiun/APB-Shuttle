@@ -21,8 +21,8 @@
       - @users.each do |user|
         %tr
           %td
-            %a{:href => admin_user_path(user), data: {method: 'delete', confirm: t('helpers.are_you_sure')}}
-              %i.fa.fa-times
+            = link_to admin_user_path(user), method: :delete, data: {confirm: t('helpers.are_you_sure')}, class: 'btn btn-xs btn-danger btn-flat' do
+              = t('helpers.delete')
 
           %td.text-center= user.username
           %td.text-center= user.email

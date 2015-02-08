@@ -22,10 +22,10 @@
       - @buses.each do |bus|
         %tr
           %td
-            = link_to edit_admin_bus_path(bus), class: 'btn btn-xs btn-flat' do
+            = link_to edit_admin_bus_path(bus), class: 'btn btn-xs btn-info btn-flat' do
               = t('helpers.edit')
           %td
-            = link_to admin_bus_path(bus), method: :delete, data: {confirm: t('helpers.are_you_sure')}, class: 'btn btn-xs btn-flat' do
+            = link_to admin_bus_path(bus), method: :delete, data: {confirm: t('helpers.are_you_sure')}, class: 'btn btn-xs btn-danger btn-flat' do
               = t('helpers.delete')
           %td{:class=> 'text-center'}
             = l bus.depart, format: :hhmm

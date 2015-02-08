@@ -16,6 +16,11 @@ Rails.application.routes.draw do
     resources :buses
     resources :oranges
     resources :users
+
+    namespace :settings do
+      resources :buses, only: [:index, :edit, :update]
+      resources :oranges, only: [:index, :edit, :update]
+    end
     root 'index#index'
   end
 

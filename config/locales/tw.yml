@@ -32,7 +32,7 @@ tw:
       update: "更新"
 
   buses:
-    name: '航警車表'
+    name: '警備車表'
     forms:
       name: '航警局'
 
@@ -41,6 +41,11 @@ tw:
 
     forms:
       name: '亞通客運'
+
+  settings:
+    name: '設定'
+    buses: '警備車'
+    orange: '亞通客運'
 
   note_enum:
     master   : '局本部'
