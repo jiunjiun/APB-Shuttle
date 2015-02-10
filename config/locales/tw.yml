@@ -20,6 +20,7 @@ tw:
     kind         : '隊別'
     note         : '備註'
     special      : '加開'
+    overtime_car : '加班車'
     direction    : '方向'
     depart       : '發車時間'
     previous     : '上一班'

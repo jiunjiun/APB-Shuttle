@@ -6,3 +6,5 @@
       = kind_enum(@bus.kind)
       \-
       = @bus.note
+      - if @bus.special
+        %span.label.label-danger= t('helpers.overtime_car')
