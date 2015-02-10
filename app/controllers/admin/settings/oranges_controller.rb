@@ -1,2 +1,4 @@
-class Admin::Settings::OrangesController < ApplicationController
+class Admin::Settings::OrangesController < AdminController
+  def index
+  end
 end

@@ -1,2 +1,4 @@
-class Admin::Settings::BusesController < ApplicationController
+class Admin::Settings::BusesController < AdminController
+  def index
+  end
 end

@@ -1,0 +1,11 @@
+%ul.breadcrumb.breadcrumb-page
+  .breadcrumb-label.text-light-gray= t('helpers.you_are_here')
+  %li
+    %a{:href => admin_root_path}= t('backend')
+  %li
+    = t('settings.name')
+  %li.active
+    = t('settings.buses')
+.page-header
+  .text-lg
+    = t('settings.buses')

@@ -1,0 +1,29 @@
+%ul.breadcrumb.breadcrumb-page
+  .breadcrumb-label.text-light-gray= t('helpers.you_are_here')
+  %li
+    = t('backend')
+.page-header
+  .text-lg
+    = t('backend')
+.row
+  .col-md-6
+    .panel.colourable
+      .panel-body
+        %h3.has-divider.text-highlight= t('buses.name')
+        %ul.list-inline
+          %li
+            = link_to t('buses.name'), admin_buses_path
+  .col-md-6
+    .panel.colourable
+      .panel-body
+        %h3.has-divider.text-highlight= t('oranges.name')
+        %ul.list-inline
+          %li
+            = link_to t('oranges.name'), admin_oranges_path
+  .col-md-6
+    .panel.colourable
+      .panel-body
+        %h3.has-divider.text-highlight= t('user_management')
+        %ul.list-inline
+          %li
+            = link_to t('user_management'), admin_users_path
