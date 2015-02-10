@@ -121,7 +121,7 @@ namespace :dev do
     Bus.new({name: '亞通客運', kind: 4, special: false, note: 'T1 to 航警局', depart: '22:05'}).save
     Bus.new({name: '亞通客運', kind: 4, special: false, note: 'T1 to 航警局', depart: '22:40'}).save
     Bus.new({name: '亞通客運', kind: 4, special: false, note: 'T1 to 航警局', depart: '23:20'}).save
-    Bus.new({name: '亞通客運', kind: 4, special: false, note: 'T1 to 航警局', depart: '23:0'}).save
+    Bus.new({name: '亞通客運', kind: 4, special: false, note: 'T1 to 航警局', depart: '23:50'}).save
 
     Bus.reset_cache
   end
