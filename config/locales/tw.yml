@@ -4,6 +4,7 @@ tw:
   back_home:    '回首頁'
 
   user_management: '帳號管理'
+  about: '關於網站'
 
   helpers:
     you_are_here : '目前在:'

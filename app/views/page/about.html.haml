@@ -1,5 +1,35 @@
-.row.text-center
+.row.text-center#about
   .col-md-12
+    %h1 關於網站
     %p
-      本網站Open source於
-      = link_to 'GitHub', 'https://github.com/jiunjiun/apb-bus'
+      本網站主要提供航警局與航廈來往車班資訊，並包含亞通客運，以方便同仁搭車。
+    %p
+      資料來源：安檢隊-駕駛班所提供、亞通客運-桃園機場巡迴巴士
+    %br
+
+    %h3 開放資料 - Open data
+    %p
+      提供API服務，詳細API Doc，請參考文件
+      = link_to 'API Doc', api_doc_path, class: 'dotted'
+    %br
+
+    %h3 開放原始碼 - Open source
+    %p
+      本網站使用
+      %code Rails 4.2.0
+      開發，並Open source於
+      = link_to 'GitHub', 'https://github.com/jiunjiun/apb-bus', class: 'dotted'
+      ，本網站有任何問題，歡迎提出Issues或是聯絡我。
+    %br
+
+    %h3 開發與聯絡方式
+    %p
+      133T
+      = link_to '陳均均(jiunjiun)', 'http://fb.com/doublejiun', class: 'dotted', target: '_blank'
+      , Email:
+      = mail_to 'quietmes@gmail.com', nil, class: 'dotted'
+    %br
+
+    %p
+      %iframe{:frameborder => "0", :height => "20px", :scrolling => "0", :src => "https://ghbtns.com/github-btn.html?user=jiunjiun&repo=apb-bus&type=star&count=true", :width => "85px"}
+      %iframe{:frameborder => "0", :height => "20px", :scrolling => "0", :src => "https://ghbtns.com/github-btn.html?user=jiunjiun&repo=apb-bus&type=fork&count=true", :width => "85px"}

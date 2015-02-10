@@ -10,7 +10,8 @@
         = link_to t('buses.name'), apb_path, class: 'no-decoration', data: { no_turbolink: true }
       %li
         = link_to t('oranges.name'), orange_path, class: 'no-decoration', data: { no_turbolink: true }
-      -# %li 關於
+      %li
+        = link_to t('about'), about_path, class: 'no-decoration', data: { no_turbolink: true }
       - if params[:controller] != 'index'
         %li
           %h4
