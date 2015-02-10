@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   get 'orange', to: "page#orange"
   get 'about',  to: "page#about"
 
-  # get 'api',    to: "api#index"
-
   root 'index#index'
 
   namespace :admin do
@@ -22,6 +20,18 @@ Rails.application.routes.draw do
       resources :oranges, only: [:index, :edit, :update]
     end
     root 'index#index'
+  end
+
+  scope :api, as: :api do
+    get 'all/:limit', to: 'api#all',   as: 'all', constraints: {:limit => /\d*/}
+    get 'all/*limit', to: 'api#error'
+    get 'all', to: 'api#all'
+
+    get 'next/:next', to: 'api#next',  as: 'next', constraints: {:next => /\d*/}
+    get 'next/*next', to: 'api#error'
+
+    get 'now', to: 'api#now'
+    get 'doc', to: 'api#doc'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
