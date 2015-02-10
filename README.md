@@ -2,6 +2,8 @@
 #### 航警局車表
 網址位置：[http://apb.jiunjiun.me](http://apb.jiunjiun.me)
 
+API Doc: [http://apb.jiunjiun.me/api/doc](http://apb.jiunjiun.me/api/doc)
+
 ---
 ### 介紹
 
@@ -11,6 +13,7 @@
 
 * [touchSwipe](http://labs.rampinteractive.co.uk/touchSwipe/demos/) - 手機觸摸
 * [Slidebars](http://plugins.adchsm.me/slidebars/)
+* [Open Data](http://apb.jiunjiun.me/api/doc])
 
 
 ---
