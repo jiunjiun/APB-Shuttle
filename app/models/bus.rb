@@ -7,8 +7,11 @@ class Bus < ActiveRecord::Base
   default_scope { order(:depart) }
 
   def self.departs_number(number=0)
-    bs_count = BusCache.count
-    number = number % bs_count if bs_count < number
+    base_number = BusCache.where(bus: recent_depart).first.id
+    bs_count    = BusCache.count
+    number     += base_number
+    number      = number % bs_count if bs_count < number
+    number      = bs_count if number == 0
     BusCache.find(number).bus
   end
 
@@ -29,7 +32,7 @@ class Bus < ActiveRecord::Base
   end
 
   def self.first_bus
-    where("depart > ?", Time.new(2014, 6, 1)).first
+    BusCache.first.bus
   end
 
   def save_with_orange

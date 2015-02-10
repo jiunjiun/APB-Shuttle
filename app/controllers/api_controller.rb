@@ -1,7 +1,6 @@
 class ApiController < ApplicationController
   def now
     @bus = Bus.recent_depart
-    session[:depart] ||= @bus.depart
 
     respond_to do |format|
       format.html { redirect_to api_doc_path}
@@ -10,7 +9,7 @@ class ApiController < ApplicationController
   end
 
   def next
-    @bus = Bus.departs_number(session[:now_num] + params[:next].to_i)
+    @bus = Bus.departs_number(params[:next].to_i)
 
     respond_to do |format|
       format.html { redirect_to api_doc_path}
