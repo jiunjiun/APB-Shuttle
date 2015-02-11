@@ -18,6 +18,7 @@
 //= require nprogress-turbolinks
 
 //= require Slidebars/slidebars.min
+//= require touchSwipe/jquery.touchSwipe.min
 
 
 NProgress.configure
