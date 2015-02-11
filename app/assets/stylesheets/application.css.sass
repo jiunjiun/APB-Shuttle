@@ -154,6 +154,18 @@ a.dotted
     text-decoration: none
     border-bottom: solid 1px #fff
 
+.bs-docs-footer-links
+  padding-left: 0
+
+  li:first-child
+    padding-left: 0
+
+  li
+    color: #fff
+    display: inline
+    padding: 0 2px
+
+
 html#app
   position: relative
   min-height: 100%
@@ -161,7 +173,7 @@ html#app
 
   body
     position: static
-    margin-bottom: 60px
+    // margin-bottom: 10px
     #wrapper
       height: auto
     #sb-site
@@ -180,10 +192,19 @@ html#app
     padding: 10px
     color: #fff
 
-
   #about, #api_doc
     color: #fff
 
     code
       color: #fff
       background-color: #E66452
+
+  .bs-docs-footer
+    border: 0
+    color: #fff
+    padding: 0
+    margin-bottom: 10px
+    ul li
+      color: #fff
+    p
+      font-size: 14px

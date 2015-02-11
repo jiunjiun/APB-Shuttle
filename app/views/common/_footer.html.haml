@@ -1,8 +1,8 @@
 #footer
   .text-center
-    = link_to 'https://github.com/jiunjiun/apb-bus', target: '_blank' do
-      -# %i.fa.fa-2x.fa-github-square
-      GitHub
-    ·2015·
-    = link_to 'https://github.com/jiunjiun', target: '_blank' do
-      jiunjiun
+    %ul.bs-docs-footer-links.text-muted
+      %li 2015
+      %li ·
+      %li= link_to 'GitHub', 'https://github.com/jiunjiun/apb-bus', target: '_blank', class: 'dotted'
+      %li ·
+      %li= link_to 'jiunjiun', 'https://github.com/jiunjiun', target: '_blank', class: 'dotted'

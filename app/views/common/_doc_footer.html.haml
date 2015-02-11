@@ -1,9 +1,10 @@
 %footer.bs-docs-footer{:role => "contentinfo"}
   .container
     %p
-      2015·
-      = link_to 'https://github.com/jiunjiun', target: '_blank' do
-        陳均均(jiunjiun)
+      2015&nbsp;·&nbsp;
+      = link_to '陳均均(jiunjiun)', 'https://github.com/jiunjiun', target: '_blank'
+      &nbsp;·&nbsp;API Doc template by
+      = link_to 'Bootstrap', 'http://getbootstrap.com/', target: '_blank'
     %p
       Code licensed under
       = succeed "," do
@@ -12,11 +13,10 @@
       = succeed "." do
         %a{:href => "http://creativecommons.org/licenses/by/3.0/"} CC BY 3.0
     %ul.bs-docs-footer-links.text-muted
-      %li Currently v1.0.0
+      %li Currently v1.1.0
       %li ·
       %li
-        = link_to 'https://github.com/jiunjiun/apb-bus', target: '_blank' do
-          GitHub
+        = link_to 'GitHub', 'https://github.com/jiunjiun/apb-bus', target: '_blank'
       %li ·
       %li
         = link_to 'About', about_path
