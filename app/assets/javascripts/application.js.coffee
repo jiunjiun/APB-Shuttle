@@ -59,3 +59,6 @@ initialize = () ->
 
 $(document).on('page:load', initialize)
 $(document).ready(initialize)
+
+
+console.log "江威龍是帥哥唷!! FB: http://fb.com/weilung.chiangwen"
