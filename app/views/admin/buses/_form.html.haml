@@ -4,7 +4,7 @@
       = f.hidden_field :name, value: t('buses.forms.name')
       .form-group{class: ('has-error' if @bus.errors.include? :kind)}
         = f.label :kind, t('helpers.kind')
-        = f.select(:kind, options_for_select(kind_option_for_select), {}, {:class=>'form-control'})
+        = f.select(:kind, options_for_select(kind_option_for_select, @bus.kind), {}, {:class=>'form-control'})
         - if @bus.errors.include? :kind
           %p.help-block
             - @bus.errors[:kind].each do |message|

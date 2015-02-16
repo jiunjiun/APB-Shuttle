@@ -9,10 +9,6 @@
         = link_to admin_oranges_path do
           %i.menu-icon.fa.fa-bus
           %span.mm-text= t('oranges.name')
-      %li
-        = link_to admin_users_path do
-          %i.menu-icon.fa.fa-users
-          %span.mm-text= t('user_management')
       %li.mm-dropdown.mm-dropdown-root
         %a{:href => "#"}
           %i.menu-icon.fa.fa-cog
@@ -24,3 +20,7 @@
           %li
             %a{:href => admin_settings_oranges_path, :tabindex => "-1"}
               %span.mm-text= t('settings.orange')
+      %li
+        = link_to admin_users_path do
+          %i.menu-icon.fa.fa-users
+          %span.mm-text= t('user_management')
