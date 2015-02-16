@@ -2,10 +2,16 @@
   .col-md-12
     %h1.title
       = t('buses.name')
+    = link_to @apb_img.file_url do
+      - case request.env['mobvious.device_type']
+      - when :tablet
+        = image_tag @apb_img.file_url(:tablet), class: 'img-thumbnail'
+      - when :mobile
+        = image_tag @apb_img.file_url(:mobile), class: 'img-thumbnail'
+      - else
+        = image_tag @apb_img.file_url(:desktop), class: 'img-thumbnail'
 
-    = link_to image_path('apb.jpg') do
-      = image_tag 'apb.jpg', width: '60%', class: 'img-thumbnail'
-
-  -# .col-md-12
-  -#   .ref
-  -#     = t('helpers.last_update', updated: '123')
+  .col-md-12
+    .ref
+      = t('helpers.last_update')
+      = l @apb_img.updated_at, format: :yymmdd

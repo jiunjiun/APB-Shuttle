@@ -79,3 +79,10 @@ gem 'google-analytics-rails'
 # config yml
 gem 'settingslogic'
 
+# upload
+gem 'carrierwave'
+gem 'mini_magick'
+
+# gem 'responsive_images', github: 'johnkoht/responsive-images', branch: 'v1.1'
+gem 'mobvious'
+

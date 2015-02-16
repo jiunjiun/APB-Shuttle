@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131060319) do
+ActiveRecord::Schema.define(version: 20150216092626) do
 
   create_table "bus_caches", force: :cascade do |t|
     t.integer  "bus_id",     limit: 4
@@ -29,6 +29,24 @@ ActiveRecord::Schema.define(version: 20150131060319) do
     t.datetime "depart"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "name",         limit: 255
+    t.string   "file",         limit: 255
+    t.string   "size",         limit: 255
+    t.string   "content_type", limit: 255
+    t.string   "description",  limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "relations", force: :cascade do |t|
+    t.string   "kind",        limit: 255
+    t.string   "description", limit: 255
+    t.string   "link",        limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "users", force: :cascade do |t|

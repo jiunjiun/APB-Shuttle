@@ -1,0 +1,12 @@
+= form_for(@photo, url: admin_settings_bus_path, :html => { :multipart => true, class: 'dirctor' }) do |f|
+  %p
+    .panel.panel-default
+      .panel-heading
+        = t('settings.buses.photo')
+      .panel-body
+        = f.file_field :file
+  .row
+    .col-md-6.pull-right
+      .pull-right
+        = link_to t('helpers.back'), admin_settings_buses_path, class: 'btn btn-default btn-flat'
+        = f.submit class: 'btn btn-success btn-flat'

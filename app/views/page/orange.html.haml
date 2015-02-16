@@ -3,11 +3,11 @@
     %h1.title
       = t('oranges.name')
 
-    = link_to 'http://www.orangebus.com.tw/data/editor_upload/images/AIRPORT-20150205.JPG' do
-      = image_tag 'http://www.orangebus.com.tw/data/editor_upload/images/AIRPORT-20150205.JPG', width: '60%', class: 'img-thumbnail'
+    = link_to @bus_img.link do
+      = image_tag @bus_img.link, width: '60%', class: 'img-thumbnail'
 
   .col-md-12
     .ref
-      = link_to 'http://www.orangebus.com.tw/info.php?catId=6', class: 'dotted' do
+      = link_to @ref_link.link, class: 'dotted' do
         = t('helpers.ref')
 

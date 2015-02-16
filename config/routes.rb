@@ -11,9 +11,7 @@ Rails.application.routes.draw do
   root 'index#index'
 
   namespace :admin do
-    resources :buses
-    resources :oranges
-    resources :users
+    resources :buses, :oranges, :users
 
     namespace :settings do
       resources :buses, only: [:index, :edit, :update]

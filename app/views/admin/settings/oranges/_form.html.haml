@@ -1,0 +1,13 @@
+= form_for(@relation, url: admin_settings_orange_path, :html => { :multipart => true, class: 'dirctor' }) do |f|
+  %p
+    .panel.panel-default
+      .panel-heading
+        = @relation.description
+      .panel-body
+        .form-group
+          = f.url_field :link, class: 'form-control'
+  .row
+    .col-md-6.pull-right
+      .pull-right
+        = link_to t('helpers.back'), admin_settings_oranges_path, class: 'btn btn-default btn-flat'
+        = f.submit class: 'btn btn-success btn-flat'

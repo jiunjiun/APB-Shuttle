@@ -5,7 +5,29 @@
   %li
     = t('settings.name')
   %li.active
-    = t('settings.buses')
+    = t('settings.bus')
 .page-header
   .text-lg
-    = t('settings.buses')
+    = t('settings.bus')
+
+.row
+  .col-lg-12
+    %table.table.table-striped
+      %thead
+        %tr
+          %th.col-md-1
+          %th.col-md-1.text-center
+            = t('settings.buses.photo')
+          %th.col-md-10.text-center
+            = t('settings.buses.description')
+
+      - @photos.each do |photo|
+        %tr
+          %td
+            = link_to edit_admin_settings_bus_path(photo), class: 'btn btn-xs btn-info btn-flat' do
+              = t('helpers.edit')
+          %td.text-center
+            = link_to photo.file_url do
+              = image_tag(photo.file_url(:thumb), class: 'img-responsive')
+          %td.text-center
+            = photo.description

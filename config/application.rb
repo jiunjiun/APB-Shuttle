@@ -23,5 +23,8 @@ module ApbBus
     config.time_zone = "Taipei"
 
     config.i18n.default_locale = "tw"
+
+    config.active_record.raise_in_transactional_callbacks = true
+    config.middleware.use Mobvious::Manager
   end
 end

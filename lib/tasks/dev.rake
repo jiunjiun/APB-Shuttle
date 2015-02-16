@@ -22,7 +22,7 @@ namespace :dev do
     Bus.new({name: '航警局', kind: 1, special: false, note: '中型警備車', depart: '16:40'}).save
 
     # 安檢
-    Bus.new({name: '航警局', kind: 2, special: false, note: '中型警備車', depart: '04:50'}).save
+    Bus.new({name: '航警局', kind: 2, special: false, note: '中型警備車', depart: '04:45'}).save
     Bus.new({name: '航警局', kind: 2, special: true, note: '中型警備車', depart: '08:50'}).save
     Bus.new({name: '航警局', kind: 2, special: true, note: '中型警備車', depart: '11:00'}).save
     Bus.new({name: '航警局', kind: 2, special: true, note: '中型警備車', depart: '11:10'}).save
@@ -124,5 +124,9 @@ namespace :dev do
     Bus.new({name: '亞通客運', kind: 4, special: false, note: 'T1 to 航警局', depart: '23:50'}).save
 
     Bus.reset_cache
+
+    Photo.new({ description: '警備車車表' }).save
+    Relation.new({ kind: 'orange_ref', description: '亞通客運-參考連結', link: 'http://www.orangebus.com.tw/info.php?catId=6' }).save
+    Relation.new({ kind: 'orange_bus_img', description: '亞通客運-參考車表圖', link: 'http://www.orangebus.com.tw/data/editor_upload/images/AIRPORT-20150205.JPG' }).save
   end
 end

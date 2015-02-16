@@ -1,0 +1,14 @@
+%ul.breadcrumb.breadcrumb-page
+  .breadcrumb-label.text-light-gray= t('helpers.you_are_here')
+  %li
+    %a{:href => admin_root_path}= t('backend')
+  %li
+    = link_to t('settings.bus'), admin_settings_oranges_path
+  %li.active
+    = t('helpers.edit')
+.page-header
+  .text-lg
+    = t('helpers.edit')
+.row
+  .col-lg-12
+    = render 'form'

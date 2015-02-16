@@ -9,3 +9,24 @@
 .page-header
   .text-lg
     = t('settings.orange')
+
+.row
+  .col-lg-12
+    %table.table.table-striped
+      %thead
+        %tr
+          %th.col-md-1
+          %th.col-md-2.text-center
+            = t('settings.oranges.description')
+          %th.col-md-9.text-center
+            = t('settings.oranges.link')
+
+      - @relations.each do |relation|
+        %tr
+          %td
+            = link_to edit_admin_settings_orange_path(relation), class: 'btn btn-xs btn-info btn-flat' do
+              = t('helpers.edit')
+          %td.text-center
+            = relation.description
+          %td.text-center
+            = relation.link
