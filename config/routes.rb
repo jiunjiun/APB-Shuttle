@@ -28,7 +28,9 @@ Rails.application.routes.draw do
     get 'next/:next', to: 'api#next',  as: 'next', constraints: {:next => /\d*/}
     get 'next/*next', to: 'api#error'
 
-    get 'now', to: 'api#now'
+    get 'now',  to: 'api#now'
+    get 'info', to: 'api#info'
+
     get 'doc', to: 'api#doc'
   end
 

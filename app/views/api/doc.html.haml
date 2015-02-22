@@ -59,7 +59,7 @@
         %tr
           %td &nbsp;&nbsp;kind
           %td Integer
-          %td 類型(1: 局本部, 2:保安隊, 3:安檢隊tw, 4:亞通客運)
+          %td 類型(1: 局本部, 2:保安隊, 3:安檢隊, 4:亞通客運)
         %tr
           %td &nbsp;&nbsp;special
           %td Boolean
@@ -142,7 +142,7 @@
         %tr
           %td &nbsp;&nbsp;kind
           %td Integer
-          %td 類型(1: 局本部, 2:保安隊, 3:安檢隊tw, 4:亞通客運)
+          %td 類型(1: 局本部, 2:保安隊, 3:安檢隊, 4:亞通客運)
         %tr
           %td &nbsp;&nbsp;special
           %td Boolean
@@ -230,7 +230,7 @@
         %tr
           %td &nbsp;&nbsp;kind
           %td Integer
-          %td 類型(1: 局本部, 2:保安隊, 3:安檢隊tw, 4:亞通客運)
+          %td 類型(1: 局本部, 2:保安隊, 3:安檢隊, 4:亞通客運)
         %tr
           %td &nbsp;&nbsp;special
           %td Boolean
@@ -256,3 +256,99 @@
           %td String
           %td 回傳訊息
 
+  .bs-docs-section
+    %h1#other_info.page-header 其他資訊
+    %p.lead
+      提供警備車圖表以及亞通客運參考圖片、來源
+
+    %h3#bus_table_info 其他資訊 - Info
+    .highlight
+      %pre
+        %span.label.label-primary GET
+        %code.language-bash{"data-lang" => "url"}
+          http://apb.jiunjiun.me/api/info.json
+
+    %p
+      %span.label.label-success Success 200
+    .highlight
+      %pre
+        {"info":{"apb":{"original":{"name":"IMG_1861_2.JPG","size":"2112197","content_type":"image/jpeg","updated_at":"2015-02-17T00:56:29.000+08:00"},"imgs_url":{"original":"http://apb.dev/uploads/photo/file/1/IMG_1861_2.JPG","desktop":"http://apb.dev/uploads/photo/file/1/desktop_IMG_1861_2.JPG","tablet":"http://apb.dev/uploads/photo/file/1/tablet_IMG_1861_2.JPG}","mobile":"http://apb.dev/uploads/photo/file/1/mobile_IMG_1861_2.JPG}"}},"orange":{"ref_img":"http://www.orangebus.com.tw/data/editor_upload/images/AIRPORT-20150205.JPG","ref_link":"http://www.orangebus.com.tw/info.php?catId=6"}},"status":{"code":200,"message":"ok"}}
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Field
+          %th Type
+          %th Description
+      %tbody
+        %tr
+          %td info
+          %td Object[]
+          %td 車輛資訊
+        %tr
+          %td &nbsp;&nbsp;apb
+          %td Object[]
+          %td 警備車資訊
+        %tr
+          %td &nbsp;&nbsp;&nbsp;&nbsp;original
+          %td Object[]
+          %td 原始圖片
+        %tr
+          %td &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name
+          %td String
+          %td 名稱
+        %tr
+          %td &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size
+          %td String
+          %td 大小
+        %tr
+          %td &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content_type
+          %td String
+          %td 圖片格式
+        %tr
+          %td &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updated_at
+          %td String
+          %td 最後更新時間
+        %tr
+          %td &nbsp;&nbsp;&nbsp;&nbsp;imgs_url
+          %td Object[]
+          %td 圖片樣式
+        %tr
+          %td &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;original
+          %td String
+          %td 原始尺寸
+        %tr
+          %td &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desktop
+          %td String
+          %td 桌面尺寸(w724*h965)
+        %tr
+          %td &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tablet
+          %td String
+          %td 平板尺寸(w596*h792)
+        %tr
+          %td &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mobile
+          %td String
+          %td 手機尺寸(w230*h304)
+        %tr
+          %td &nbsp;&nbsp;orange
+          %td Object[]
+          %td 亞通客運資訊
+        %tr
+          %td &nbsp;&nbsp;&nbsp;&nbsp;ref_img
+          %td String
+          %td 參考圖片連結
+        %tr
+          %td &nbsp;&nbsp;&nbsp;&nbsp;ref_link
+          %td String
+          %td 參考連結
+        %tr
+          %td status
+          %td Object
+          %td 狀態資訊
+        %tr
+          %td &nbsp;&nbsp;code
+          %td Integer
+          %td 回傳編碼(200: 成功, 400: 錯誤)
+        %tr
+          %td &nbsp;&nbsp;message
+          %td String
+          %td 回傳訊息

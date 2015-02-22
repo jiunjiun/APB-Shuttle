@@ -25,6 +25,17 @@ class ApiController < ApplicationController
     end
   end
 
+  def info
+    @apb_img = Photo.first
+    @ref_link = Relation.find_by_kind('orange_ref')
+    @bus_img  = Relation.find_by_kind('orange_bus_img')
+
+    respond_to do |format|
+      format.html { redirect_to api_doc_path}
+      format.json
+    end
+  end
+
   def doc
     render layout: 'doc'
   end
