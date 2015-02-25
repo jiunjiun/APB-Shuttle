@@ -1,6 +1,8 @@
 #info
   %h1.depart
     = @bus.depart.strftime("%H:%M")
+  .recent_depart.hide
+    = @recent_depart.depart.strftime("%H:%M")
   .details
     %h3
       = kind_enum(@bus.kind)
