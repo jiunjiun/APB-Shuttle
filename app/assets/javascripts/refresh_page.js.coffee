@@ -3,7 +3,7 @@ now_hour = now.getHours()
 now_min = now.getMinutes()
 now_seconds = now.getSeconds()
 
-depart = document.getElementsByClassName("depart")[0].innerHTML.trim().split(':');
+depart = document.getElementsByClassName("recent_depart")[0].innerHTML.trim().split(':');
 depart_hour = parseInt(depart[0])
 depart_min  = parseInt(depart[1])
 
