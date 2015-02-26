@@ -15,7 +15,7 @@
     .highlight
       %pre
         %code.language-bash{"data-lang" => "url"}
-          http://apb.jiunjiun.me/api/&lt;PARAMS&gt;.json
+          = "#{root_url}api/<PARAMS>.json"
 
   .bs-docs-section
     %h1#bus_info.page-header 車表資訊
@@ -34,7 +34,7 @@
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          http://apb.jiunjiun.me/api/now.json
+          = "#{root_url}api/now.json"
     %p
       %span.label.label-success Success 200
 
@@ -93,13 +93,13 @@
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          http://apb.jiunjiun.me/api/next/&lt;NEXT&gt;.json
+          = "#{root_url}api/next/<NEXT>.json"
     %h4 Example
     .highlight
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          http://apb.jiunjiun.me/api/next/1.json
+          = "#{root_url}api/next/1.json"
     %h4 Result
     .highlight
       %pre
@@ -176,19 +176,19 @@
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          http://apb.jiunjiun.me/api/all.json
+          = "#{root_url}api/all.json"
     %p 你也可以讀取前10筆資訊
     .highlight
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          http://apb.jiunjiun.me/api/all/&lt;LIMIT&gt;.json
+          = "#{root_url}api/all/<LIMIT>.json"
     %h4 Example
     .highlight
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          http://apb.jiunjiun.me/api/all/10.json
+          = "#{root_url}api/all/10.json"
     %h4 Result
     .highlight
       %pre
@@ -211,7 +211,183 @@
 
     .highlight
       %pre
-        {"bus":{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"19:35"},"status":{"code":200,"message":"ok"}}
+        {"buses":[{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"00:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"01:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"02:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"03:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"04:10"},{"name":"航警局","kind":2,"special":false,"note":"中型警備車","depart":"04:45"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"04:45"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"04:55"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"05:15"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"05:20"},{"name":"航警局","kind":3,"special":false,"note":"大型警備車","depart":"05:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"06:10"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"07:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"07:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"07:35"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"07:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"07:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"08:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"08:05"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"08:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"08:20"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"08:35"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"08:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"08:40"},{"name":"航警局","kind":2,"special":true,"note":"中型警備車","depart":"08:50"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"09:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"09:05"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"09:10"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"09:35"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"09:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"09:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"10:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"10:05"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"10:10"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"10:35"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"10:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"10:40"},{"name":"航警局","kind":2,"special":true,"note":"中型警備車","depart":"11:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"11:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"11:05"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"11:10"},{"name":"航警局","kind":2,"special":true,"note":"中型警備車","depart":"11:10"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"11:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"12:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"12:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"12:05"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"12:10"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"12:40"},{"name":"航警局","kind":2,"special":true,"note":"中型警備車","depart":"13:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"13:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"13:05"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"13:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"13:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"14:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"14:05"},{"name":"航警局","kind":3,"special":false,"note":"大型警備車","depart":"14:10"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"14:35"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"14:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"14:40"},{"name":"航警局","kind":2,"special":true,"note":"中型警備車","depart":"14:50"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"15:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"15:05"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"15:10"},{"name":"航警局","kind":2,"special":true,"note":"中型警備車","depart":"15:10"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"15:35"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"15:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"15:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"16:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"16:05"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"16:10"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"16:35"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"16:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"16:40"},{"name":"航警局","kind":2,"special":false,"note":"中型警備車","depart":"17:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"17:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"17:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"17:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"17:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"17:45"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"18:10"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"19:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"19:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"19:30"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"19:35"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"19:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"20:10"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"20:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"20:45"},{"name":"航警局","kind":2,"special":false,"note":"中型警備車","depart":"21:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"21:30"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"21:35"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"21:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"22:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"22:05"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"22:10"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"22:30"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"22:40"},{"name":"航警局","kind":2,"special":false,"note":"中型警備車","depart":"23:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"23:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"23:15"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"23:20"},{"name":"航警局","kind":2,"special":false,"note":"中型警備車","depart":"23:25"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"23:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"23:45"}],"status":{"code":200,"message":"ok"}}
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Field
+          %th Type
+          %th Description
+      %tbody
+        %tr
+          %td buses
+          %td Object[]
+          %td 車輛資訊
+        %tr
+          %td &nbsp;&nbsp;name
+          %td String
+          %td 名稱
+        %tr
+          %td &nbsp;&nbsp;kind
+          %td Integer
+          %td 類型(1: 局本部, 2:保安隊, 3:安檢隊, 4:亞通客運)
+        %tr
+          %td &nbsp;&nbsp;special
+          %td Boolean
+          %td 是否為加班車
+        %tr
+          %td &nbsp;&nbsp;note
+          %td String
+          %td 備註(車種類型)
+        %tr
+          %td &nbsp;&nbsp;depart
+          %td String
+          %td 發車時間
+        %tr
+          %td status
+          %td Object
+          %td 狀態資訊
+        %tr
+          %td &nbsp;&nbsp;code
+          %td Integer
+          %td 回傳編碼(200: 成功, 400: 錯誤)
+        %tr
+          %td &nbsp;&nbsp;message
+          %td String
+          %td 回傳訊息
+
+    %br
+
+    %h3#bus_info-all-apb 全部車表 - APB
+    %p 所有警備車車表資訊
+    .highlight
+      %pre
+        %span.label.label-primary GET
+        %code.language-bash{"data-lang" => "url"}
+          = "#{root_url}api/all/apb.json"
+    %p 你也可以讀取前10筆資訊
+    .highlight
+      %pre
+        %span.label.label-primary GET
+        %code.language-bash{"data-lang" => "url"}
+          = "#{root_url}api/all/apb/<LIMIT>.json"
+    %h4 Example
+    .highlight
+      %pre
+        %span.label.label-primary GET
+        %code.language-bash{"data-lang" => "url"}
+          = "#{root_url}api/all/apb/10.json"
+    %h4 Result
+    .highlight
+      %pre
+        {"buses":[{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"00:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"01:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"02:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"03:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"04:10"},{"name":"航警局","kind":2,"special":false,"note":"中型警備車","depart":"04:45"},{"name":"航警局","kind":3,"special":false,"note":"大型警備車","depart":"05:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"06:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"07:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"08:10"}],"status":{"code":200,"message":"ok"}}
+    %p
+      %span.label.label-info Parameter
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Field
+          %th Type
+          %th Description
+      %tbody
+        %tr
+          %td limit
+          %td Integer
+          %td 前幾筆資訊
+    %p
+      %span.label.label-success Success 200
+
+    .highlight
+      %pre
+        {"buses":[{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"00:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"01:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"02:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"03:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"04:10"},{"name":"航警局","kind":2,"special":false,"note":"中型警備車","depart":"04:45"},{"name":"航警局","kind":3,"special":false,"note":"大型警備車","depart":"05:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"06:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"07:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"08:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"08:20"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"08:40"},{"name":"航警局","kind":2,"special":true,"note":"中型警備車","depart":"08:50"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"09:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"09:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"10:10"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"10:40"},{"name":"航警局","kind":2,"special":true,"note":"中型警備車","depart":"11:00"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"11:10"},{"name":"航警局","kind":2,"special":true,"note":"中型警備車","depart":"11:10"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"11:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"12:10"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"12:40"},{"name":"航警局","kind":2,"special":true,"note":"中型警備車","depart":"13:00"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"13:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"13:40"},{"name":"航警局","kind":3,"special":false,"note":"大型警備車","depart":"14:10"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"14:40"},{"name":"航警局","kind":2,"special":true,"note":"中型警備車","depart":"14:50"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"15:10"},{"name":"航警局","kind":2,"special":true,"note":"中型警備車","depart":"15:10"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"15:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"16:10"},{"name":"航警局","kind":1,"special":false,"note":"中型警備車","depart":"16:40"},{"name":"航警局","kind":2,"special":false,"note":"中型警備車","depart":"17:05"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"17:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"18:10"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"19:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"20:10"},{"name":"航警局","kind":2,"special":false,"note":"中型警備車","depart":"21:00"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"21:40"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"22:10"},{"name":"航警局","kind":2,"special":false,"note":"中型警備車","depart":"23:00"},{"name":"航警局","kind":2,"special":false,"note":"中型警備車","depart":"23:25"},{"name":"航警局","kind":3,"special":false,"note":"中型警備車","depart":"23:40"}],"status":{"code":200,"message":"ok"}}
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Field
+          %th Type
+          %th Description
+      %tbody
+        %tr
+          %td buses
+          %td Object[]
+          %td 車輛資訊
+        %tr
+          %td &nbsp;&nbsp;name
+          %td String
+          %td 名稱
+        %tr
+          %td &nbsp;&nbsp;kind
+          %td Integer
+          %td 類型(1: 局本部, 2:保安隊, 3:安檢隊, 4:亞通客運)
+        %tr
+          %td &nbsp;&nbsp;special
+          %td Boolean
+          %td 是否為加班車
+        %tr
+          %td &nbsp;&nbsp;note
+          %td String
+          %td 備註(車種類型)
+        %tr
+          %td &nbsp;&nbsp;depart
+          %td String
+          %td 發車時間
+        %tr
+          %td status
+          %td Object
+          %td 狀態資訊
+        %tr
+          %td &nbsp;&nbsp;code
+          %td Integer
+          %td 回傳編碼(200: 成功, 400: 錯誤)
+        %tr
+          %td &nbsp;&nbsp;message
+          %td String
+          %td 回傳訊息
+
+    %br
+
+    %h3#bus_info-all-orange 全部車表 - Orange
+    %p 所有車表資訊
+    .highlight
+      %pre
+        %span.label.label-primary GET
+        %code.language-bash{"data-lang" => "url"}
+          = "#{root_url}api/all/orange.json"
+    %p 你也可以讀取前10筆資訊
+    .highlight
+      %pre
+        %span.label.label-primary GET
+        %code.language-bash{"data-lang" => "url"}
+          = "#{root_url}api/all/orange/<LIMIT>.json"
+    %h4 Example
+    .highlight
+      %pre
+        %span.label.label-primary GET
+        %code.language-bash{"data-lang" => "url"}
+          = "#{root_url}api/all/orange/10.json"
+    %h4 Result
+    .highlight
+      %pre
+        {"buses":[{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"04:45"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"04:55"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"05:15"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"05:20"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"07:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"07:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"07:35"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"07:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"08:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"08:05"}],"status":{"code":200,"message":"ok"}}
+    %p
+      %span.label.label-info Parameter
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Field
+          %th Type
+          %th Description
+      %tbody
+        %tr
+          %td limit
+          %td Integer
+          %td 前幾筆資訊
+    %p
+      %span.label.label-success Success 200
+
+    .highlight
+      %pre
+        {"buses":[{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"04:45"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"04:55"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"05:15"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"05:20"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"07:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"07:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"07:35"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"07:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"08:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"08:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"08:35"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"08:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"09:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"09:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"09:35"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"09:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"10:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"10:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"10:35"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"10:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"11:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"11:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"12:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"12:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"12:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"13:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"13:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"14:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"14:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"14:35"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"14:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"15:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"15:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"15:35"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"15:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"16:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"16:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"16:35"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"16:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"17:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"17:10"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"17:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"17:45"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"19:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"19:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"19:30"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"19:35"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"20:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"20:45"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"21:30"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"21:35"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"22:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"22:05"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"22:30"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"22:40"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"23:00"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"23:15"},{"name":"亞通客運","kind":4,"special":false,"note":"T1 to 航警局","depart":"23:20"},{"name":"亞通客運","kind":4,"special":false,"note":"T2 to T1","depart":"23:45"}],"status":{"code":200,"message":"ok"}}
     %table.table.table-striped.table-bordered
       %thead
         %tr
