@@ -57,6 +57,9 @@ class ApiController < ApplicationController
   end
 
   def error
-    redirect_to api_doc_path
+    respond_to do |format|
+      format.html { redirect_to api_doc_path}
+      format.json
+    end
   end
 end
