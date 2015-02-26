@@ -25,6 +25,22 @@ class ApiController < ApplicationController
     end
   end
 
+  def all_apb
+    @buses = Bus.where(kind: [1, 2, 3]).limit(params[:limit])
+    respond_to do |format|
+      format.html { redirect_to api_doc_path}
+      format.json
+    end
+  end
+
+  def all_orange
+    @buses = Bus.where(kind: 4).limit(params[:limit])
+    respond_to do |format|
+      format.html { redirect_to api_doc_path}
+      format.json
+    end
+  end
+
   def info
     @apb_img = Photo.first
     @ref_link = Relation.find_by_kind('orange_ref')
@@ -41,5 +57,6 @@ class ApiController < ApplicationController
   end
 
   def error
+    redirect_to api_doc_path
   end
 end

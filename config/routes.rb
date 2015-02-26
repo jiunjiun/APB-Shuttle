@@ -21,9 +21,23 @@ Rails.application.routes.draw do
   end
 
   scope :api, as: :api do
-    get 'all/:limit', to: 'api#all',   as: 'all', constraints: {:limit => /\d*/}
-    get 'all/*limit', to: 'api#error'
-    get 'all', to: 'api#all'
+    scope :all, as: nil do
+      get '/apb/:limit', to: 'api#all_apb',   as: 'apb', constraints: {:limit => /\d*/}
+      get '/apb/*limit', to: 'api#error'
+      get '/apb', to: 'api#all_apb'
+
+      get '/orange/:limit', to: 'api#all_orange',   as: 'orange', constraints: {:limit => /\d*/}
+      get '/orange/*limit', to: 'api#error'
+      get '/orange', to: 'api#all_orange'
+
+      get '/:limit', to: 'api#all',   as: 'all', constraints: {:limit => /\d*/}
+      get '/*limit', to: 'api#error'
+      get '/', to: 'api#all'
+
+    end
+    # get 'all/:limit', to: 'api#all',   as: 'all', constraints: {:limit => /\d*/}
+    # get 'all/*limit', to: 'api#error'
+    # get 'all', to: 'api#all'
 
     get 'next/:next', to: 'api#next',  as: 'next', constraints: {:next => /\d*/}
     get 'next/*next', to: 'api#error'
