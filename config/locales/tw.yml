@@ -5,6 +5,7 @@ tw:
 
   user_management: '帳號管理'
   about: '關於網站'
+  doc  : 'APP'
 
   helpers:
     you_are_here : '目前在:'

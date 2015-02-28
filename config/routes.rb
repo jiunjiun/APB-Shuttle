@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'apb',    to: "page#apb"
   get 'orange', to: "page#orange"
   get 'about',  to: "page#about"
+  get 'doc',    to: "page#doc"
 
   root 'index#index'
 

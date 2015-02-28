@@ -1,0 +1,45 @@
+.row.text-center#doc
+  .col-md-12
+    %h1 APP
+    %h3
+    %ul#nav_tab.nav.nav-pills{:role => "tablist"}
+      %li.active{:role => "presentation"}
+        %a#home-tab{"aria-controls" => "iOS", "aria-expanded" => "true", "data-toggle" => "tab", :href => "#iOS", :role => "tab"} iOS
+      %li{:role => "presentation"}
+        %a#profile-tab{"aria-controls" => "Android", "aria-expanded" => "false", "data-toggle" => "tab", :href => "#Android", :role => "tab"} Android
+
+    .tab-content
+      #iOS.tab-pane.fade.active.in{"aria-labelledby" => "home-tab", :role => "tabpanel"}
+        %h3
+        %p 目前暫無iOS App，按照下面方式也可以擁有APP
+
+        %blockquote
+          %p
+            1. 連結至
+            = link_to "首頁(#{root_url})", root_url
+            ，點選分享圖式
+        %p
+          = image_tag 'ios/step_1.PNG', class: 'img-thumbnail'
+
+        %blockquote
+          %p
+            2. 選擇 加入主畫面
+        %p
+          = image_tag 'ios/step_2.PNG', class: 'img-thumbnail'
+
+        %blockquote
+          %p
+            3. 設定名稱(也可以略過)完後，選擇右上方 新增
+        %p
+          = image_tag 'ios/step_3.PNG', class: 'img-thumbnail'
+
+        %blockquote
+          %p
+            4. 你的桌面就會出現一個APP，完成!!
+        %p
+          = image_tag 'ios/step_4.PNG', class: 'img-thumbnail'
+
+      #Android.tab-pane.fade{"aria-labelledby" => "profile-tab", :role => "tabpanel"}
+        %h3
+        %a{:href => "https://play.google.com/store/apps/details?id=tw.jiunjiun.apb.apb_shuttle"}
+          %img{:alt => "Get it on Google Play", :src => "https://developer.android.com/images/brand/en_generic_rgb_wo_45.png"}/

@@ -192,12 +192,31 @@ html#app
     padding: 10px
     color: #fff
 
-  #about, #api_doc
+  #about, #api_doc, #doc
     color: #fff
 
     code
       color: #fff
       background-color: #E66452
+
+  #doc
+    .nav-tabs > li, .nav-pills > li
+      float: none
+      display: inline-block
+
+    .nav-tabs, .nav-pills
+      text-align: center
+
+      a
+        color: #fff
+        &:hover, &:focus
+          background-color: #009688
+          color: #fff
+      .active
+        a
+          background-color: #fff
+          color: #18bc9c
+
 
   .bs-docs-footer
     border: 0

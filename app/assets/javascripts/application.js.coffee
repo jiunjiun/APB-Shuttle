@@ -19,6 +19,7 @@
 
 //= require Slidebars/slidebars.min
 //= require touchSwipe/jquery.touchSwipe.min
+//= require bootstrap
 
 
 NProgress.configure
@@ -56,6 +57,17 @@ initialize = () ->
   $('.sb-toggle-right').click ->
     mySlidebars = new $.slidebars()
     mySlidebars.slidebars.open('right')
+
+
+  detect_device = ->
+    userAgent = navigator.userAgent
+    if /Android/i.test(userAgent)
+      $('#nav_tab a:last').tab('show')
+    else if /iPhone|iPad/i.test(userAgent)
+      $('#nav_tab a:first').tab('show')
+
+  detect_device() if location.pathname is '/doc'
+  true
 
 $(document).on('page:load', initialize)
 $(document).ready(initialize)
