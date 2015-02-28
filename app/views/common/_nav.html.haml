@@ -11,6 +11,8 @@
       %li
         = link_to t('oranges.name'), orange_path, class: 'no-decoration', data: { no_turbolink: true }
       %li
+        = link_to t('doc'), doc_path, class: 'no-decoration', data: { no_turbolink: true }
+      %li
         = link_to t('about'), about_path, class: 'no-decoration', data: { no_turbolink: true }
       - if params[:controller] != 'index'
         %li

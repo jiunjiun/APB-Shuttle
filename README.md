@@ -1,8 +1,12 @@
-# APB
+# APB-Shuttle
 #### 航警局車表
-網址位置：[http://apb.jiunjiun.me](http://apb.jiunjiun.me)
+網址位置：[http://apb-shuttle.info](http://apb-shuttle.info)
 
-API Doc: [http://apb.jiunjiun.me/api/doc](http://apb.jiunjiun.me/api/doc)
+API Doc: [http://apb-shuttle.info/api/doc](http://apb-shuttle.info/api/doc)
+
+#### Android
+* APP: [APB Shuttle](https://play.google.com/store/apps/details?id=tw.jiunjiun.apb.apb_shuttle)
+* GitHub: [APB-Shuttle-Android](https://github.com/jiunjiun/APB-Shuttle-Android)
 
 ---
 ### 介紹
@@ -65,4 +69,4 @@ rake user:build
 
 ## Copyright / License
 * Copyright (c) 2015 jiunjiun (quietmes At gmail.com)
-* Licensed under GPL licenses.
+* Licensed under [MIT](https://github.com/jiunjiun/apb-shuttle/blob/master/LICENSE) licenses.

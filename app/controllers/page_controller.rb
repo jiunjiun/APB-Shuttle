@@ -10,4 +10,7 @@ class PageController < ApplicationController
 
   def about
   end
+
+  def doc
+  end
 end
