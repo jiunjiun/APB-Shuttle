@@ -16,7 +16,7 @@
         %blockquote
           %p
             1. 連結至
-            = link_to "首頁(#{root_url})", root_url
+            = link_to "首頁(#{root_url})", root_url, class: 'dotted'
             ，點選分享圖式
         %p
           = image_tag 'ios/step_1.PNG', class: 'img-thumbnail'
@@ -40,6 +40,8 @@
           = image_tag 'ios/step_4.PNG', class: 'img-thumbnail'
 
       #Android.tab-pane.fade{"aria-labelledby" => "profile-tab", :role => "tabpanel"}
+        %h3
+        %h4 全新的Android APP，你除了在網頁上找到車表，也可以下載這個APP
         %h3
         %a{:href => "https://play.google.com/store/apps/details?id=tw.jiunjiun.apb.apb_shuttle"}
           %img{:alt => "Get it on Google Play", :src => "https://developer.android.com/images/brand/en_generic_rgb_wo_45.png"}/
