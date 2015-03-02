@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_url
-      dev_url = 'apb.dev'
+      keep_url = ['apb.dev', 'apb-shuttle.info']
       new_redirect_url = "http://apb-shuttle.info"
-      redirect_to "#{new_redirect_url}#{request.original_fullpath}" if request.host != dev_url
+      redirect_to "#{new_redirect_url}#{request.original_fullpath}" if !keep_url.include? request.host
     end
 end
