@@ -10,8 +10,11 @@ depart_min  = parseInt(depart[1])
 depart_hour = now_hour+1 if depart_hour == 0 && now_hour == 23
 compare = (depart_hour - now_hour) * 60 + (depart_min - now_min)
 
-setTimeout (->
-  location.reload()
-  return
-), compare * 60 * 1000 - ((now_seconds) * 60)
+refresh_ms = compare * 60 * 1000 - ((now_seconds) * 60)
+
+if refresh_ms > 30 * 1000
+  setTimeout (->
+    location.reload()
+    return
+  ), refresh_ms
 
