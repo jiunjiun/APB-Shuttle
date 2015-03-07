@@ -26,6 +26,7 @@ class Bus < ActiveRecord::Base
 
   def self.reset_cache
     BusCache.destroy_all
+    BusCache.reset_pk_sequence
     Bus.all.each do |bus|
       BusCache.new({bus: bus}).save
     end
@@ -41,8 +42,16 @@ class Bus < ActiveRecord::Base
   end
 
   before_save :add_depart
+
+  after_create :update_cache
+  after_save :update_cache
   private
     def add_depart
       self.depart = self.depart.change(year: 2014, month: 6, day: 1)
+    end
+
+    def update_cache
+      # ResetBusCache.perform_async
+      Bus.reset_cache
     end
 end
