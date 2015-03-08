@@ -14,7 +14,7 @@ refresh_ms = compare * 60 * 1000 - ((now_seconds) * 60)
 
 if refresh_ms > 30 * 1000
   setTimeout (->
-    location.reload()
+    location.href = '/'
     return
   ), refresh_ms
 
