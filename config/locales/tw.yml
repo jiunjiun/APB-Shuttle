@@ -7,6 +7,10 @@ tw:
   about: '關於網站'
   doc  : 'APP'
 
+  sign_in        : '登入'
+  sign_out       : '登出'
+  password_change: '密碼修改'
+
   helpers:
     you_are_here : '目前在:'
     are_you_sure : '確定刪除嗎?'
