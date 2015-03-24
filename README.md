@@ -5,7 +5,7 @@
 API Doc: [http://apb-shuttle.info/api/doc](http://apb-shuttle.info/api/doc)
 
 #### Android
-* APP: [APB Shuttle](https://play.google.com/store/apps/details?id=tw.jiunjiun.apb.apb_shuttle)
+* APP: [APB Shuttle](https://play.google.com/store/apps/details?id=tw.jiunjiun.apb.shuttle)
 * GitHub: [APB-Shuttle-Android](https://github.com/jiunjiun/APB-Shuttle-Android)
 
 ---
