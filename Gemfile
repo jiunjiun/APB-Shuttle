@@ -87,5 +87,3 @@ gem 'mini_magick'
 gem 'mobvious'
 
 gem 'sidekiq'
-
-gem 'capistrano', '~> 3.2.0'
