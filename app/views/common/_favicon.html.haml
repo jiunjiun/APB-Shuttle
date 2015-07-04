@@ -1,0 +1,4 @@
+= favicon_link_tag 'favicon.ico'
+
+- %w(48 72 96 144).each do |size|
+  = favicon_link_tag "apb-icon/apb-icon@#{size}.png", rel: 'apple-touch-icon', type: 'image/png', sizes: "#{size}x#{size}"
