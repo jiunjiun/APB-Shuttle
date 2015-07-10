@@ -6,11 +6,11 @@ gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -51,6 +51,10 @@ end
 
 group :development do
   gem "pry-remote"
+
+  # livereload
+  gem 'guard'
+  gem 'guard-livereload'
 end
 
 #--
@@ -67,8 +71,9 @@ gem 'bootstrap-sass'
 gem 'haml'
 
 gem "animate-rails"
-
 gem 'nprogress-rails'
+
+gem 'materialize-sass'
 
 # user access
 gem 'devise'

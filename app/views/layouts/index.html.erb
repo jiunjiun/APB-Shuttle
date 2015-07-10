@@ -37,9 +37,13 @@
   </head>
 
   <body>
-
   <!-- Menu -->
   <%= render partial: "common/nav" %>
+  <div id="add-ons">
+    <div class="weather tooltipped" data-position="bottom" data-delay="50">
+      <i></i>
+    </div>
+  </div>
   <div id="menu">
     <div class="sb-toggle-right">
       <i class="fa fa-bars fa-2x"></i>
@@ -64,6 +68,7 @@
       <%= render partial: 'common/footer' %>
     </div>
   </div>
+  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'refresh_page' %>
   <%= yield :js %>

@@ -14,6 +14,8 @@
  *= require animate
  */
 
+@import "materialize/components/prefixer"
+@import "materialize/components/tooltip"
 @import "bootstrap"
 @import "font-awesome"
 
@@ -23,7 +25,7 @@
 @import "nprogress-bootstrap"
 
 @import "Slidebars/slidebars"
-
+@import "weather"
 
 body
   height: 100%
@@ -57,6 +59,25 @@ h1, h3, p, a
   .sb-toggle-right
     padding: 20px
 
+#add-ons
+  position: absolute
+  right: 40px
+  color: #fff
+  z-index: 2
+  cursor: pointer
+
+  .weather
+    float: left
+    padding: 5px
+    margin-right: 30px
+
+    i
+      width: 38px
+      font-family: weather
+      font-size: 4em
+      font-weight: normal
+      font-style: normal
+      line-height: 1.0
 
 #sb-site > article
   height: 100%
@@ -228,3 +249,7 @@ html#app
       color: #fff
     p
       font-size: 14px
+
+
+.material-tooltip
+  font-size: 18px
