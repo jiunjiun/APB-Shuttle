@@ -20,6 +20,7 @@
 //= require Slidebars/slidebars.min
 //= require touchSwipe/jquery.touchSwipe.min
 //= require bootstrap
+//= require materialize-sprockets
 
 
 NProgress.configure
@@ -67,6 +68,19 @@ initialize = () ->
       $('#nav_tab a:first').tab('show')
 
   detect_device() if location.pathname is '/doc'
+
+  $.simpleWeather
+    location: 'Taoyuan, Taiwan'
+    woeid: ''
+    unit: 'c'
+    success: (weather) ->
+      $('#add-ons .weather i').addClass("icon-#{weather.code}")
+      $('#add-ons .weather').attr('data-tooltip', "桃園: #{weather.temp}℃ (#{weather.high}-#{weather.low})")
+      $('.tooltipped').tooltip({delay: 50})
+
+      return
+    error: (error) ->
+      return
   true
 
 $(document).on('page:load', initialize)

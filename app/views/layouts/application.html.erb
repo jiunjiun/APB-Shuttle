@@ -51,6 +51,7 @@
     </div>
   </div>
   <%= render partial: 'common/full_footer' %>
+  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= yield :js %>
   </body>
