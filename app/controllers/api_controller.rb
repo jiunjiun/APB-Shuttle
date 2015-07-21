@@ -34,7 +34,7 @@ class ApiController < ApplicationController
   end
 
   def all_orange
-    @buses = Bus.where(kind: 4).limit(params[:limit])
+    @buses = Bus.where(kind: [4]).limit(params[:limit])
     respond_to do |format|
       format.html { redirect_to api_doc_path}
       format.json
