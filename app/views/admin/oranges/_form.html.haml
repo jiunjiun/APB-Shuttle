@@ -1,7 +1,7 @@
 = form_for(@bus, url: h_oranges_url(@bus)) do |f|
   .panel
     .panel-body
-      = f.hidden_field :name, value: t('buses.forms.name')
+      = f.hidden_field :name, value: t('oranges.forms.name')
       .form-group{class: ('has-error' if @bus.errors.include? :note)}
         = f.label :note, t('helpers.direction')
         = f.select(:note, options_for_select(note_option_for_select, @bus.note), {}, {:class=>'form-control'})
