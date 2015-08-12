@@ -22,6 +22,6 @@ class ApplicationController < ActionController::Base
     def mixpanel_tracker
       @tracker = Mixpanel::Tracker.new(Settings.mixpanel.token)
 
-      @tracker.track('apb', 'Rails', {'Controller': params[:controller], Action: params[:action]})
+      @tracker.track('apb', 'Rails', {'Controller#Action': "#{params[:controller]}\##{params[:action]}", Controller: params[:controller], Action: params[:action]})
     end
 end
