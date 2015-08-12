@@ -1,6 +1,8 @@
 defaults: &defaults
   google:
     analytics_key: ""
+  mixpanel:
+    token: ""
 
 development:
   <<: *defaults

@@ -1,4 +1,6 @@
 class ApiController < ApplicationController
+  before_action :mixpanel_track
+
   def now
     @bus = Bus.recent_depart
 
@@ -60,6 +62,13 @@ class ApiController < ApplicationController
     respond_to do |format|
       format.html { redirect_to api_doc_path}
       format.json
+    end
+  end
+
+  private
+  def mixpanel_track
+    mengpaneel.setup do
+      mixpanel.track('API', "#{params[:action]}")
     end
   end
 end

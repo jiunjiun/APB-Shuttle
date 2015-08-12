@@ -4,15 +4,15 @@
       %li
         %h3.previous
           - if params[:next].to_i - 1 == 0
-            %a{:href => root_path}= t('helpers.previous')
+            %a.mixpanel-tracked{:href => root_path}= t('helpers.previous')
           - else
-            %a{:href => next_path(params[:next].to_i - 1)}= t('helpers.previous')
+            %a.mixpanel-tracked{:href => next_path(params[:next].to_i - 1)}= t('helpers.previous')
       %li
         &emsp;&emsp;
     %li
       %h3.next
         - if params[:next].nil?
-          %a{:href => next_path(1)}= t('helpers.next')
+          %a.mixpanel-tracked{:href => next_path(1)}= t('helpers.next')
         - else
-          %a{:href => next_path(params[:next].to_i + 1)}= t('helpers.next')
+          %a.mixpanel-tracked{:href => next_path(params[:next].to_i + 1)}= t('helpers.next')
 

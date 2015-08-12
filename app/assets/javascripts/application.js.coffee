@@ -87,4 +87,10 @@ $(document).on('page:load', initialize)
 $(document).ready(initialize)
 
 
+mixpanel.track_links(".next a", "Next")
+mixpanel.track_links(".previous a", "Previous")
+
+mixpanel.track_links ".mixpanel-tracked", "Link", ->
+  referrer : document.referrer
+
 console.log "江威龍是帥哥唷!! FB: http://fb.com/weilung.chiangwen"

@@ -2,7 +2,7 @@
   .col-md-12
     %h1.title
       = t('buses.name')
-    = link_to @apb_img.file_url do
+    = link_to @apb_img.file_url, class: 'mixpanel-tracked' do
       - case request.env['mobvious.device_type']
       - when :tablet
         = image_tag @apb_img.file_url(:tablet), class: 'img-thumbnail'

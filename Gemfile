@@ -92,3 +92,6 @@ gem 'mini_magick'
 gem 'mobvious'
 
 gem 'sidekiq'
+
+gem "mixpanel-ruby"
+gem "mengpaneel"
