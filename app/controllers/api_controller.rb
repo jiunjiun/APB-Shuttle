@@ -67,8 +67,6 @@ class ApiController < ApplicationController
 
   private
   def mixpanel_track
-    mengpaneel.setup do
-      mixpanel.track('API', "#{params[:action]}")
-    end
+    @tracker.track('apb', 'API', 'Action': "#{params[:action]}")
   end
 end
