@@ -1,7 +1,6 @@
 class IndexController < ApplicationController
   def index
     @bus = @recent_depart = Bus.recent_depart
-    self.mixpanel_track
   end
 
   def next
