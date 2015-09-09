@@ -26,5 +26,7 @@ module ApbBus
 
     config.active_record.raise_in_transactional_callbacks = true
     config.middleware.use Mobvious::Manager
+
+    config.exceptions_app = self.routes
   end
 end

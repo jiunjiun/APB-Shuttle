@@ -13,4 +13,7 @@ class PageController < ApplicationController
 
   def doc
   end
+
+  def announce
+  end
 end

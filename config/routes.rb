@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'orange', to: "page#orange"
   get 'about',  to: "page#about"
   get 'doc',    to: "page#doc"
+  get 'announce', to: 'page#announce'
 
   root 'index#index'
 
@@ -19,6 +20,10 @@ Rails.application.routes.draw do
       resources :oranges, only: [:index, :edit, :update]
     end
     root 'index#index'
+  end
+
+  %w( 404 422 500 ).each do |code|
+    get code, :to => "errors#show", :code => code
   end
 
   scope :api, as: :api do

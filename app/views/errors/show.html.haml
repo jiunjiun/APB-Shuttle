@@ -1,0 +1,26 @@
+.header
+  %a.logo{href: root_path}
+    .demo-logo
+      = image_tag('apb-icon/apb-icon@48.png', class: 'img-responsive', width: 36, height: 36)
+    \&nbsp;
+    %strong APB Shuttle
+  / / .logo
+/ / .header
+.error-code 404
+.error-text
+  %span.oops Oh My God!!!!!
+  %br
+  %span.hr
+  %br
+  %p
+    伺服器出問題了
+  %p
+    趕快通知我
+  %p.contact_me
+    = link_to 'Line', 'http://line.me/ti/p/J3gdhKgQ75', target: '_blank'
+    |
+    = link_to 'Facebook', 'http://fb.com/doublejiun', target: '_blank'
+    |
+    = mail_to 'quietmes@gmail.com', 'Email'
+
+
