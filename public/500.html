@@ -1,66 +1,86 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 8]>         <html class="ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie9 gt-ie8"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="gt-ie8 gt-ie9 not-ie"> <!--<![endif]-->
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+  <title>Error - APB Shuttle</title>
 
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="jiunjiun">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+  <!-- Open Sans font from Google CDN -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
 
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
+  <!-- assets -->
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-4ac1cc25ee1ed59fdcf58a83a69ec1a010c880630a19c26e6fb6f42337fec9b0.ico">
+  <link rel="stylesheet" type="text/css" href="/assets/error-c7912c1f1ff90cb7893be74a31a667ed94921ec33be5dd1674b7bb962398ed4c.css">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 
-<body>
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
+
+<!-- 1. $BODY ======================================================================================
+
+  Body
+
+  Classes:
+  * 'right-to-left' - Sets text direction to right-to-left
+-->
+<body class="page-500">
+
+<div class="header">
+  <a class="logo" href="<%= root_path %>">
+    <div class="demo-logo">
+      <img class="img-responsive" width="36" height="36" src="/assets/apb-icon/apb-icon@48-18fd8bb6438483565659b3c0c17f3c11c1a8920854b330ceffb5f05bf5a69eaa.png" alt="Apb icon@48 18fd8bb6438483565659b3c0c17f3c11c1a8920854b330ceffb5f05bf5a69eaa">
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+    \&nbsp;
+    <strong>APB Shuttle</strong>
+  </a>
+  <!-- / .logo
+  -->
+</div>
+<!-- / .header
+-->
+<div class="error-code">404</div>
+<div class="error-text">
+  <span class="oops">Oh My God!!!!!</span>
+  <br/>
+  <span class="hr"></span>
+  <br/>
+  <p>
+    伺服器出問題了
+  </p>
+  <p>
+    趕快通知我
+  </p>
+  <p class="contact_me">
+    <a href="http://line.me/ti/p/J3gdhKgQ75" target="_blank">Line</a>
+    |
+    <a href="http://fb.com/doublejiun" target="_blank">Facebook</a>
+    |
+    <a href="mailto:quietmes@gmail.com">Email</a>
+  </p>
+</div>
+
+
+<script type="text/javascript" src="/assets/error-8f69304135a0d58de4c4cd56b9632fd9bc24b4822627a3f76e7343d379f06299.js"></script>
+<!-- Get jQuery from Google CDN -->
+<!--[if !IE]> -->
+  <script type="text/javascript"> window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">'+"<"+"/script>"); </script>
+<!-- <![endif]-->
+<!--[if lte IE 9]>
+  <script type="text/javascript"> window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">'+"<"+"/script>"); </script>
+<![endif]-->
+
 </body>
 </html>
