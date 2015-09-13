@@ -1,4 +1,9 @@
 #footer
+  #current_date.text-center
+    %p
+      現在時間:
+      = l Date.today, format: :yymmdd_s
+      = t('date.day_names')[Date.today.cwday]
   .text-center
     %ul.bs-docs-footer-links.text-muted
       %li 2015
