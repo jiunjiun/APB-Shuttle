@@ -22,6 +22,8 @@
 //= require bootstrap
 //= require materialize-sprockets
 
+//= require jquery.simpleWeather/jquery.simpleWeather.min
+
 
 NProgress.configure
   showSpinner: false

@@ -57,7 +57,7 @@ mixpanel.init("<%= Settings.mixpanel.token %>");</script><!-- end Mixpanel -->
       <!-- MAIN IMAGE SECTION -->
       <article>
         <% if Date.today <= Date.parse('2015-09-21') %>
-          <%= link_to t('announce'), announce_path, class: 'announce text-center' %>
+          <%= link_to t('announce'), announce_path, class: 'announce text-center', data: { no_turbolink: true } %>
         <% end %>
         <div class="inner">
           <hgroup>
@@ -75,7 +75,6 @@ mixpanel.init("<%= Settings.mixpanel.token %>");</script><!-- end Mixpanel -->
     </div>
   </div>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js' %>
   <%= javascript_include_tag 'refresh_page' %>
   <%= yield :js %>
   </body>
