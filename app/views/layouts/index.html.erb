@@ -56,6 +56,9 @@ mixpanel.init("<%= Settings.mixpanel.token %>");</script><!-- end Mixpanel -->
     <div id="sb-site">
       <!-- MAIN IMAGE SECTION -->
       <article>
+        <% if Date.today <= Date.parse('2015-09-21') %>
+          <%= link_to t('announce'), announce_path, class: 'announce text-center' %>
+        <% end %>
         <div class="inner">
           <hgroup>
             <header class="logo">
