@@ -11,6 +11,8 @@ tw:
   sign_out       : '登出'
   password_change: '密碼修改'
 
+  announce: '公告'
+
   helpers:
     you_are_here : '目前在:'
     are_you_sure : '確定刪除嗎?'
