@@ -10,3 +10,7 @@
       = @bus.note
       - if @bus.special
         %span.label.label-danger= t('helpers.overtime_car')
+  .detail_note
+    - if @bus.kind == 1
+      ✱
+      %strong= t 'notify.master_note'

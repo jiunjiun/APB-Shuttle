@@ -40,6 +40,9 @@ tw:
       create: "新增"
       update: "更新"
 
+  notify:
+    master_note: '局本部假日不開'
+
   buses:
     name: '警備車表'
     forms:
@@ -85,6 +88,20 @@ tw:
         new_password         : '新密碼'
         password_confirmation: '密碼確認'
         update               : '密碼更新'
+
+  date:
+    day_names:
+      -
+      - 星期一
+      - 星期二
+      - 星期三
+      - 星期四
+      - 星期五
+      - 星期六
+      - 星期日
+    formats:
+      yymmdd: '%Y年%m月%d日'
+      yymmdd_s: '%Y-%m-%d'
 
   time:
     formats:
