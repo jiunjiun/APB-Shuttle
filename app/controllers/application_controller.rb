@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :redirect_url
   before_action :mixpanel_tracker
+  before_filter :set_cache_buster
 
   protected
     def configure_permitted_parameters
@@ -23,5 +24,11 @@ class ApplicationController < ActionController::Base
       @tracker = Mixpanel::Tracker.new(Settings.mixpanel.token)
 
       @tracker.track('apb', 'Rails', {'Controller#Action': "#{params[:controller]}\##{params[:action]}", Controller: params[:controller], Action: params[:action]})
+    end
+
+    def set_cache_buster
+      response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+      response.headers["Pragma"] = "no-cache"
+      response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
     end
 end
