@@ -20,12 +20,8 @@
 //= require_self
 
 $ ->
-  $('.dropdown-toggle').dropdown()
   init = []
   window.PixelAdmin.start init
 
-  initialize = ->
-    $('[data-toggle="tooltip"]').tooltip()
-
-  $(document).ready(initialize)
-  $(document).on('page:load', initialize)
+  $('.dropdown-toggle').dropdown()
+  $('[data-toggle="tooltip"]').tooltip()
