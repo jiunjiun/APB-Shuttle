@@ -14,15 +14,15 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:sign_up) << :username
     end
 
-    def request_host_is_api_url?
-      (request.host =~ /api\./).nil?
-    end
+    # def request_host_is_api_url?
+    #   (request.host =~ /api\./).nil?
+    # end
 
-    def redirect_url
-      keep_url = ['apb.dev', 'apb-shuttle.info']
-      new_redirect_url = "https://apb-shuttle.info"
-      redirect_to "#{new_redirect_url}#{request.original_fullpath}" if !keep_url.include? request.host
-    end
+    # def redirect_url
+    #   keep_url = ['apb.dev', 'apb-shuttle.info']
+    #   new_redirect_url = "https://apb-shuttle.info"
+    #   redirect_to "#{new_redirect_url}#{request.original_fullpath}" if !keep_url.include? request.host
+    # end
 
     def mixpanel_tracker
       @tracker = Mixpanel::Tracker.new(Settings.mixpanel.token)
