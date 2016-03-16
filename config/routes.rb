@@ -1,14 +1,37 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => 'users/registrations',  sessions: 'users/sessions'}
 
+  namespace :api, constraints: {subdomain: 'api'}, path: nil do
+    scope :all, as: nil do
+      get '/apb/:limit', to: 'api#all_apb',   as: 'apb', constraints: {:limit => /\d*/}
+      get '/apb/*limit', to: 'api#error'
+      get '/apb', to: 'api#all_apb'
+
+      get '/orange/:limit', to: 'api#all_orange',   as: 'orange', constraints: {:limit => /\d*/}
+      get '/orange/*limit', to: 'api#error'
+      get '/orange', to: 'api#all_orange'
+
+      get '/:limit', to: 'api#all',   as: 'all', constraints: {:limit => /\d*/}
+      get '/*limit', to: 'api#error'
+      get '/', to: 'api#all'
+    end
+
+    get 'next/:next', to: 'api#next',  as: 'next', constraints: {:next => /\d*/}
+    get 'next/*next', to: 'api#error'
+
+    get 'now',  to: 'api#now'
+    get 'info', to: 'api#info'
+  end
+
   get 'next/:next', to: 'index#next',  as: 'next', constraints: {:next => /\d*/}
   get "next/*next" => redirect("/")
 
-  get 'apb',    to: "page#apb"
-  get 'orange', to: "page#orange"
-  get 'about',  to: "page#about"
-  get 'doc',    to: "page#doc"
+  get 'apb',      to: "page#apb"
+  get 'orange',   to: "page#orange"
+  get 'about',    to: "page#about"
+  get 'doc',      to: "page#doc"
   get 'announce', to: 'page#announce'
+  get 'doc/api',  to: 'page#api', as: 'api_doc'
 
   root 'index#index'
 
@@ -24,34 +47,6 @@ Rails.application.routes.draw do
 
   %w( 404 422 500 ).each do |code|
     get code, :to => "errors#show", :code => code
-  end
-
-  scope :api, as: :api do
-    scope :all, as: nil do
-      get '/apb/:limit', to: 'api#all_apb',   as: 'apb', constraints: {:limit => /\d*/}
-      get '/apb/*limit', to: 'api#error'
-      get '/apb', to: 'api#all_apb'
-
-      get '/orange/:limit', to: 'api#all_orange',   as: 'orange', constraints: {:limit => /\d*/}
-      get '/orange/*limit', to: 'api#error'
-      get '/orange', to: 'api#all_orange'
-
-      get '/:limit', to: 'api#all',   as: 'all', constraints: {:limit => /\d*/}
-      get '/*limit', to: 'api#error'
-      get '/', to: 'api#all'
-
-    end
-    # get 'all/:limit', to: 'api#all',   as: 'all', constraints: {:limit => /\d*/}
-    # get 'all/*limit', to: 'api#error'
-    # get 'all', to: 'api#all'
-
-    get 'next/:next', to: 'api#next',  as: 'next', constraints: {:next => /\d*/}
-    get 'next/*next', to: 'api#error'
-
-    get 'now',  to: 'api#now'
-    get 'info', to: 'api#info'
-
-    get 'doc', to: 'api#doc'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

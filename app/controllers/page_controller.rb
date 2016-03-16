@@ -16,4 +16,8 @@ class PageController < ApplicationController
 
   def announce
   end
+
+  def api
+    render layout: 'doc'
+  end
 end

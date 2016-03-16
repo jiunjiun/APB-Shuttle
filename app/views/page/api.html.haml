@@ -15,7 +15,7 @@
     .highlight
       %pre
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/<PARAMS>.json"
+          = "#{api_url}/<PARAMS>.json"
     %h3#how_to_use.page-header Ruby Gem
     %p
       提供
@@ -41,7 +41,7 @@
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/now.json"
+          = "#{api_url}/now.json"
     %p
       %span.label.label-success Success 200
 
@@ -100,13 +100,13 @@
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/next/<NEXT>.json"
+          = "#{api_url}/next/<NEXT>.json"
     %h4 Example
     .highlight
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/next/1.json"
+          = "#{api_url}/next/1.json"
     %h4 Result
     .highlight
       %pre
@@ -183,19 +183,19 @@
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/all.json"
+          = "#{api_url}/all.json"
     %p 你也可以讀取前10筆資訊
     .highlight
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/all/<LIMIT>.json"
+          = "#{api_url}/all/<LIMIT>.json"
     %h4 Example
     .highlight
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/all/10.json"
+          = "#{api_url}/all/10.json"
     %h4 Result
     .highlight
       %pre
@@ -271,19 +271,19 @@
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/all/apb.json"
+          = "#{api_url}/all/apb.json"
     %p 你也可以讀取前10筆資訊
     .highlight
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/all/apb/<LIMIT>.json"
+          = "#{api_url}/all/apb/<LIMIT>.json"
     %h4 Example
     .highlight
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/all/apb/10.json"
+          = "#{api_url}/all/apb/10.json"
     %h4 Result
     .highlight
       %pre
@@ -359,19 +359,19 @@
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/all/orange.json"
+          = "#{api_url}/all/orange.json"
     %p 你也可以讀取前10筆資訊
     .highlight
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/all/orange/<LIMIT>.json"
+          = "#{api_url}/all/orange/<LIMIT>.json"
     %h4 Example
     .highlight
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/all/orange/10.json"
+          = "#{api_url}/all/orange/10.json"
     %h4 Result
     .highlight
       %pre
@@ -449,7 +449,7 @@
       %pre
         %span.label.label-primary GET
         %code.language-bash{"data-lang" => "url"}
-          = "#{root_url}api/info.json"
+          = "#{api_url}/info.json"
 
     %p
       %span.label.label-success Success 200

@@ -5,13 +5,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :redirect_url
+  before_action :redirect_url, if: :request_host_is_api_url?
   before_action :mixpanel_tracker
   before_filter :set_cache_buster
 
   protected
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) << :username
+    end
+
+    def request_host_is_api_url?
+      (request.host =~ /api\./).nil?
     end
 
     def redirect_url
