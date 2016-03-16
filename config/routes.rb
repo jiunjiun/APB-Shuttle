@@ -1,30 +1,29 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => 'users/registrations',  sessions: 'users/sessions'}
 
-  namespace :api, constraints: {subdomain: 'api'}, path: nil do
-    scope :all, as: nil do
-      get '/apb/:limit', to: 'api#all_apb',   as: 'apb', constraints: {:limit => /\d*/}
-      get '/apb/*limit', to: 'api#error'
-      get '/apb', to: 'api#all_apb'
+  constraints(Domain::Api) do
+    scope module: :api, defaults: {format: 'json'} do
+      scope :all, as: :api do
+        get '/apb/:limit', to: 'api#all_apb',   as: 'apb', constraints: {:limit => /\d*/}
+        get '/apb/*limit', to: 'api#error'
+        get '/apb', to: 'api#all_apb'
 
-      get '/orange/:limit', to: 'api#all_orange',   as: 'orange', constraints: {:limit => /\d*/}
-      get '/orange/*limit', to: 'api#error'
-      get '/orange', to: 'api#all_orange'
+        get '/orange/:limit', to: 'api#all_orange',   as: 'orange', constraints: {:limit => /\d*/}
+        get '/orange/*limit', to: 'api#error'
+        get '/orange', to: 'api#all_orange'
 
-      get '/:limit', to: 'api#all',   as: 'all', constraints: {:limit => /\d*/}
-      get '/*limit', to: 'api#error'
-      get '/', to: 'api#all'
+        get '/:limit', to: 'api#all',   as: 'all', constraints: {:limit => /\d*/}
+        get '/*limit', to: 'api#error'
+        get '/', to: 'api#all'
+      end
+
+      get 'next/:next', to: 'api#next',  as: 'next', constraints: {:next => /\d*/}
+      get 'next/*next', to: 'api#error'
+
+      get 'now',  to: 'api#now'
+      get 'info', to: 'api#info'
     end
-
-    get 'next/:next', to: 'api#next',  as: 'next', constraints: {:next => /\d*/}
-    get 'next/*next', to: 'api#error'
-
-    get 'now',  to: 'api#now'
-    get 'info', to: 'api#info'
   end
-
-  get 'next/:next', to: 'index#next',  as: 'next', constraints: {:next => /\d*/}
-  get "next/*next" => redirect("/")
 
   get 'apb',      to: "page#apb"
   get 'orange',   to: "page#orange"
