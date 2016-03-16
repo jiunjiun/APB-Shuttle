@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :redirect_url, if: :request_host_is_api_url?
+  # before_action :redirect_url, if: :request_host_is_api_url?
   before_action :mixpanel_tracker
   before_filter :set_cache_buster
 
