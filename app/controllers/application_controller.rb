@@ -7,32 +7,40 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :redirect_url, if: :request_host_is_api_url?
   before_action :mixpanel_tracker
-  before_filter :set_cache_buster
+  before_action :set_cache_buster
+
+  before_action :validate_subdomain
 
   protected
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.for(:sign_up) << :username
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :username
+  end
+
+  # def request_host_is_api_url?
+  #   (request.host =~ /api\./).nil?
+  # end
+
+  # def redirect_url
+  #   keep_url = ['apb.dev', 'apb-shuttle.info']
+  #   new_redirect_url = "https://apb-shuttle.info"
+  #   redirect_to "#{new_redirect_url}#{request.original_fullpath}" if !keep_url.include? request.host
+  # end
+
+  def mixpanel_tracker
+    @tracker = Mixpanel::Tracker.new(Settings.mixpanel.token)
+
+    @tracker.track('apb', 'Rails', {'Controller#Action': "#{params[:controller]}\##{params[:action]}", Controller: params[:controller], Action: params[:action]})
+  end
+
+  def set_cache_buster
+    response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+  end
+
+  def validate_subdomain
+    if request.subdomain == "api" and controller_name != 'api'
+      redirect_to root_url(subdomain: '')
     end
-
-    # def request_host_is_api_url?
-    #   (request.host =~ /api\./).nil?
-    # end
-
-    # def redirect_url
-    #   keep_url = ['apb.dev', 'apb-shuttle.info']
-    #   new_redirect_url = "https://apb-shuttle.info"
-    #   redirect_to "#{new_redirect_url}#{request.original_fullpath}" if !keep_url.include? request.host
-    # end
-
-    def mixpanel_tracker
-      @tracker = Mixpanel::Tracker.new(Settings.mixpanel.token)
-
-      @tracker.track('apb', 'Rails', {'Controller#Action': "#{params[:controller]}\##{params[:action]}", Controller: params[:controller], Action: params[:action]})
-    end
-
-    def set_cache_buster
-      response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
-      response.headers["Pragma"] = "no-cache"
-      response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
-    end
+  end
 end
