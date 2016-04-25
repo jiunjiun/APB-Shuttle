@@ -2,7 +2,7 @@
 #### 航警局車表
 網址位置：[http://apb-shuttle.info](http://apb-shuttle.info)
 
-API Doc: [http://apb-shuttle.info/api/doc](http://apb-shuttle.info/api/doc)
+API Doc: [https://apb-shuttle.info/doc/api](https://apb-shuttle.info/doc/api)
 
 #### Android
 * APP: [APB Shuttle](https://play.google.com/store/apps/details?id=tw.jiunjiun.apb.shuttle)
