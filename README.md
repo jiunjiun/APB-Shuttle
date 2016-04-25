@@ -17,7 +17,7 @@ API Doc: [http://apb-shuttle.info/api/doc](http://apb-shuttle.info/api/doc)
 
 * [touchSwipe](http://labs.rampinteractive.co.uk/touchSwipe/demos/) - 手機觸摸
 * [Slidebars](http://plugins.adchsm.me/slidebars/)
-* [Open Data](http://apb.jiunjiun.me/api/doc])
+* [Open Data](https://apb-shuttle.info/doc/api)
 
 
 ---
