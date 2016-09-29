@@ -4,7 +4,8 @@ class Bots::LineController < ApplicationController
   def callback
     body = request.body.read
 
-    unless client.validate_signature(body, Settings.line.LINE_CHANNEL_SECRET)
+    signature = request.env['HTTP_X_LINE_SIGNATURE']
+    unless client.validate_signature(body, signature)
       render text: 'Bad Request', status: 400 and return
     end
 
