@@ -1,4 +1,6 @@
 class Bots::LineController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def callback
     body = params.to_json.to_s
 
