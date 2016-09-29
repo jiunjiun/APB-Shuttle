@@ -2,7 +2,7 @@ class Bots::LineController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def callback
-    body = params.to_json.to_s
+    body = request.body.read
 
     unless client.validate_signature(body, Settings.line.LINE_CHANNEL_SECRET)
       render text: 'Bad Request', status: 400 and return
