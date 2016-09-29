@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => 'users/registrations',  sessions: 'users/sessions'}
 
+  # line bot
+  post 'line/callback', to: 'bots/line#callback'
+
   # constraints(Domain::Api) do
   namespace :api, path: nil, constraints: {subdomain: 'api' }, defaults: {format: 'json'} do
     scope :all, as: :api do

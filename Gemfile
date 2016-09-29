@@ -95,3 +95,6 @@ gem 'sidekiq'
 
 gem "mixpanel-ruby"
 gem "mengpaneel"
+
+# line bot
+gem 'line-bot-api'

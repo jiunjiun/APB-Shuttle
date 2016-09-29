@@ -31,6 +31,7 @@ module ApbBus
 
     config.autoload_paths += %W(
       #{config.root}/lib
+      #{config.root}/app/services
     )
   end
 end
