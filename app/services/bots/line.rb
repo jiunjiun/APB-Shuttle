@@ -1,3 +1,5 @@
+require 'line/bot'
+
 module Bots
   class Line
     def self.client
