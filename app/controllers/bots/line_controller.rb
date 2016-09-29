@@ -5,7 +5,7 @@ class Bots::LineController < ApplicationController
     body = params.to_json.to_s
 
     unless client.validate_signature(body, Settings.line.LINE_CHANNEL_SECRET)
-      render text: 'Bad Request', status: 400
+      render text: 'Bad Request', status: 400 and return
     end
 
     events = client.parse_events_from(body)
@@ -27,7 +27,7 @@ class Bots::LineController < ApplicationController
       end
     }
 
-    render text: "OK"
+    render text: "OK" and return
   end
 
   private
