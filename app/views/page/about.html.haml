@@ -7,6 +7,16 @@
       資料來源：安檢隊-駕駛班所提供、亞通客運-桃園機場巡迴巴士
     %br
 
+    %h3 贊助 - Donate
+    %p
+      如果你覺得這個服務很好，可以贊助這個網站。
+      %form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post", :target => "_top"}
+        %input{:name => "cmd", :type => "hidden", :value => "_s-xclick"}/
+        %input{:name => "hosted_button_id", :type => "hidden", :value => "NG7CYR4SWSAZ6"}/
+        %input{:alt => "Donate", :border => "0", :name => "submit", :src => "https://www.paypal.com/zh_CN/i/btn/btn_donateCC_LG.gif", :title => "PayPal - The safer, easier way to pay online!", :type => "image"}/
+        %img{:alt => "", :border => "0", :height => "1", :src => "https://www.paypal.com/zh_CN/i/scr/pixel.gif", :width => "1"}/
+    %br
+
     %h3 開放資料 - Open data
     %p
       提供API服務，詳細API Doc，請參考文件
